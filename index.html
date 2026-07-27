@@ -1,37 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Note flow</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!--Navigation Bar-->
     <header>
-        <div class="navbar">
-            <div class="navbar-logo"><img src="images/logo.png" alt="Logo"></div>
-            <div class="navbar-links" id="navbar-links">
-                <ul>
-                    <li><a href="#"><img src="images/icons/Home.svg" alt="Home-icon">Home</a></li>
-                    <li><a href="#"><img src="images/icons/Notes.svg" alt="Notes-icon">Notes</a></li>
-                    <li><a href="#"><img src="images/icons/Category.svg" alt="Category-icon">Category</a></li>
-                    <li><a href="#"><img src="images/icons/About.svg" alt="About-icon">About</a></li>
-                    <li><a href="#"><img src="images/icons/Contact.svg" alt="Contact-icon">Contact</a></li>
-                </ul>
-                <div class="navbar-buttons">
-                    <a href="#"><button id="signup">Sign up</button></a>
-                    <a href="#" ><button id="login">Login</button></a>
-                </div>
-            </div>
-            <div class="menu-icon"><img src="images/icons/Menu.svg" alt="menu" id="menu-icon"></div>
+      <div class="navbar">
+        <div class="navbar-logo"><img src="images/logo.png" alt="Logo" /></div>
+        <div class="navbar-links" id="navbar-links">
+          <ul>
+            <li>
+              <a href="#"
+                ><img src="images/icons/Home.svg" alt="Home-icon" />Home</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/Notes.svg" alt="Notes-icon" />Notes</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="images/icons/Category.svg"
+                  alt="Category-icon"
+                />Category</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img src="images/icons/About.svg" alt="About-icon" />About</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><img
+                  src="images/icons/Contact.svg"
+                  alt="Contact-icon"
+                />Contact</a
+              >
+            </li>
+          </ul>
+          <div class="navbar-buttons">
+            <a href="#"><button id="signup">Sign up</button></a>
+            <a href="#"><button id="login">Login</button></a>
+          </div>
         </div>
+        <div class="menu-icon">
+          <img src="images/icons/Menu.svg" alt="menu" id="menu-icon" />
+        </div>
+      </div>
     </header>
+
+    <!--Hero section-->
+    <div class="hero">
+      <div class="hero-main">
+        <div class="hero-left">
+          <h1 id="learn-text">
+            <span id="ln-1">Learn.</span> <span id="ln-2">Share.</span>
+            <span id="ln-3">Grow.</span>
+          </h1>
+          <h1 id="student-text">Student Resource Hub</h1>
+          <p>
+            Find high-quality notes, study materials and <br />
+            resources shared by students, for students.
+          </p>
+
+          <div class="search-bar">
+            <input type="text" placeholder="Search notes,subject.." />
+            <img src="images/icons/Search.svg" alt="" id="search-icon" />
+          </div>
+          <div class="hero-buttons">
+            <button class="btn note-btn">Explore Notes</button>
+            <button class="btn browse-btn">Browse Categorise</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <img src="images/heroimage.jpg" alt="hero image" id="heroimg" />
+        </div>
+      </div>
+    </div>
+    
+    
+
+
+
+
 
 
 
     <script src="js/script.js"></script>
-    
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
