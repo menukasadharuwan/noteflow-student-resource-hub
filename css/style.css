@@ -188,6 +188,7 @@
 .hero{
     width: 100%;
     min-height: 100vh;
+    background-color: #2f78f427;
 }
 
 .hero-main{
@@ -387,6 +388,7 @@
   justify-content: center;
   align-items: center;
   gap: 4em;
+  margin-top: 2em;
 }
 
 .ctg-title h3{
