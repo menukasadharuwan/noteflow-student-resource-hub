@@ -1,9 +1,12 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: sans-serif;
 }
+
 
 .navbar {
   width: 100%;
@@ -130,26 +133,26 @@
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
-    background-color: #0052e195;
-    border-top-left-radius: 10px;
+    background-color: #d3d9e4;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
+    align-items: center;
     gap: 3em;
-    position: absolute;
-    top: 100%;
-    width: 50%;
+    position: fixed;
+    top: 80px;
+    width: 100%;
     height: calc(100vh - 80px);
     padding: 2em;
-    right: 0;
-    margin-right: 0;
-    left: auto;
+    
+    
+    left: 0;
   }
 
   .navbar-links ul {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: center;
+    align-items: center;
     gap: 2em;
   }
 
@@ -160,7 +163,7 @@
   .navbar-buttons {
     flex-direction: column;
     justify-content: start;
-    align-items: start;
+    align-items: center;
     margin-top: 2em;
   }
 
@@ -182,22 +185,17 @@
   }
 }
 
-.hero {
-  width: 100%;
-  height: 89vh;
-  position: relative;
+.hero{
+    width: 100%;
+    min-height: 100vh;
 }
 
-.hero-main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* background-color: #0054E1; */
-  display: flex;
-  gap: 3em;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2em 2%;
+.hero-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+    padding: 2em 2%;
 }
 
 .hero-right {
@@ -330,6 +328,8 @@
 }
 
 @media (max-width: 768px) {
+  
+ 
   .hero-main {
     flex-direction: column-reverse;
   }
@@ -375,5 +375,86 @@
   .hero-buttons{
     margin-top: 1.5em;
     gap: 1em;
+  }
+}
+
+
+
+
+.ctg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4em;
+}
+
+.ctg-title h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: clamp(1rem , 2vw , 3rem);
+  
+  
+}
+.ctg-title h3::before,
+.ctg-title h3::after{
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: black;
+}
+.ctg-cards{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+
+.ctg-card{
+  width: 15em;
+  height: 18em;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0  10px black;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-size: clamp(15px , 2vw , 18px);
+}
+
+.ctg-card:hover{
+  width: 16em;
+  height: 19em;
+  
+}
+
+.card-img{
+  background-color: #7ba3e761;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.card-img img{
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width:768px){
+  .ctg{
+   
   }
 }
