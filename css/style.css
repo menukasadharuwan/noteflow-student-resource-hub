@@ -75,6 +75,7 @@
   width: 90%;
   height: 3.5em;
   border-radius: 7px 0 0 7px;
+  
 }
 
 .search-bar input::placeholder {
@@ -264,6 +265,7 @@
 .ctg-card:hover{
   width: 16em;
   height: 19em;
+  cursor: pointer;
   
 }
 
@@ -333,6 +335,10 @@
     box-shadow: 0 2px 8px rgba(0,0,0,.1);
 
     transition: .3s;
+}
+
+.note-footer button:hover{
+  cursor: pointer;
 }
 
 .note-card:hover{

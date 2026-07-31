@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f9ff;
+    color: #222;
+}
+
+main {
+    width: 100%;
+    padding: 60px 20px;
+}
+
+.contact-section {
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* LEFT SIDE */
+
+.contact-info {
+    width: 35%;
+    background: #eef5ff;
+    padding: 50px 40px;
+}
+
+.contact-info h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0d2c6c;
+    margin-bottom: 12px;
+}
+
+.contact-info h2::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #1d63ff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.contact-text {
+    font-size: 17px;
+    color: #555;
+    line-height: 28px;
+    margin: 35px 0;
+}
+
+.info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.icon {
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1d63ff;
+    font-size: 24px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.info-box h4 {
+    font-size: 20px;
+    margin-bottom: 6px;
+    color: #1d2d5c;
+}
+
+.info-box p {
+    color: #666;
+    line-height: 25px;
+    font-size: 16px;
+}
+
+.follow-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #0d2c6c;
+    font-size: 24px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1d63ff;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.social-icons a:hover {
+    background: #1d63ff;
+    color: white;
+}
+
+
+/* RIGHT SIDE */
+
+.contact-form {
+    width: 65%;
+    padding: 50px;
+    background: #fff;
+}
+
+.contact-form h2 {
+    font-size: 36px;
+    color: #0d2c6c;
+    margin-bottom: 40px;
+}
+
+.contact-form h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: #1d63ff;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.contact-form form {
+    width: 100%;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #d7e2f2;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 25px;
+}
+
+.input-box i {
+    color: #1d63ff;
+    font-size: 22px;
+}
+
+.input-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: transparent;
+}
+
+.textarea {
+    align-items: flex-start;
+}
+
+.textarea i {
+    margin-top: 5px;
+}
+
+.textarea textarea {
+    width: 100%;
+    height: 180px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 16px;
+    background: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-box:focus-within {
+    border-color: #1d63ff;
+    box-shadow: 0 0 10px rgba(29, 99, 255, 0.15);
+}
+
+.send-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 34px;
+    border: none;
+    border-radius: 10px;
+    background: #1d63ff;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn i {
+    font-size: 18px;
+}
+
+.send-btn:hover {
+    background: #0d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+    main {
+        padding: 50px 20px;
+    }
+
+    .contact-section {
+        flex-direction: column;
+    }
+
+    .contact-info,
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-info {
+        padding: 40px 35px;
+    }
+
+    .contact-form {
+        padding: 40px 35px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 32px;
+    }
+
+    .contact-text {
+        margin: 25px 0;
+    }
+
+}
+
+
+/*  Mobile */
+
+@media (max-width: 768px) {
+
+    main {
+        padding: 40px 15px;
+    }
+
+    .contact-section {
+        border-radius: 15px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 26px;
+    }
+
+    .contact-text {
+        font-size: 15px;
+        line-height: 26px;
+    }
+
+    .info-box {
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .info-box h4 {
+        font-size: 18px;
+    }
+
+    .info-box p {
+        font-size: 15px;
+        line-height: 24px;
+    }
+
+    .follow-title {
+        font-size: 22px;
+        margin-top: 35px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+
+    .input-box {
+        padding: 14px 16px;
+    }
+
+    .input-box i {
+        font-size: 20px;
+    }
+
+    .input-box input,
+    .textarea textarea {
+        font-size: 15px;
+    }
+
+    .textarea textarea {
+        height: 150px;
+    }
+
+    .send-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+}
+
+
+/*  Small Mobile */
+
+@media (max-width: 480px) {
+
+    .contact-info h2,
+    .contact-form h2 {
+        font-size: 22px;
+    }
+
+    .contact-text {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .info-box h4 {
+        font-size: 17px;
+    }
+
+    .info-box p {
+        font-size: 14px;
+    }
+
+    .social-icons a {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .input-box {
+        padding: 12px 14px;
+    }
+
+    .send-btn {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+}
