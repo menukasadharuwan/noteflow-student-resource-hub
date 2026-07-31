@@ -1,49 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Notes Filter</title>
+    <title>Notes Filter</title>
 
-<link rel="stylesheet" href="../css/filter.css">
+    <link rel="stylesheet" href="../css/filter.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-</head>
-<body>
-
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
     <!--Navigation Bar-->
     <header>
       <div class="navbar">
-        <div class="navbar-logo"><img src="../images/logo.png" alt="Logo" /></div>
+        <div class="navbar-logo">
+          <img src="../images/logo.png" alt="Logo" />
+        </div>
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="../index.html"
-                ><img src="../../images/icons/Home.svg" alt="Home-icon" />Home</a
-              >
+              <a href="../index.html">Home</a>
             </li>
             <li>
-              <a href="../includes/filter.html"
-                ><img src="../images/icons/Notes.svg" alt="Notes-icon" />Notes</a
-              >
+              <a href="../includes/filter.html">Notes</a>
             </li>
-            
+
             <li>
-              <a href="#"
-                ><img src="../images/icons/About.svg" alt="About-icon" />About</a
-              >
+              <a href="#">About</a>
             </li>
             <li>
-              <a href="#"
-                ><img
-                  src="../images/icons/Contact.svg"
-                  alt="Contact-icon"
-                />Contact</a
-              >
+              <a href="#">Contact</a>
             </li>
           </ul>
           <div class="navbar-buttons">
@@ -57,325 +49,255 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
       </div>
     </header>
 
+    <section class="notes-page">
+      <!-- Banner -->
 
-
-<section class="notes-page">
-
-
-    <!-- Banner -->
-
-    <div class="banner">
-
+      <div class="banner">
         <div class="banner-icon">
-            <i class="fa-solid fa-file-lines"></i>
+          <i class="fa-solid fa-file-lines"></i>
         </div>
 
         <div>
-            <h1>All Notes & Resources</h1>
-            <p>Discover notes shared by students across various subjects.</p>
+          <h1>All Notes & Resources</h1>
+          <p>Discover notes shared by students across various subjects.</p>
         </div>
+      </div>
 
-    </div>
-
-    <div class="main-container">
-
+      <div class="main-container">
         <!-- Left -->
 
         <aside class="sidebar">
+          <h3>
+            <i class="fa-solid fa-filter"></i>
+            Filters
+          </h3>
 
-            <h3>
-                <i class="fa-solid fa-filter"></i>
-                Filters
-            </h3>
+          <div class="input-group">
+            <label>Search</label>
 
-            <div class="input-group">
-
-                <label>Search</label>
-
-                <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search notes...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-
+            <div class="search-box">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search notes..."
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
             </div>
+          </div>
 
-            <div class="input-group">
+          <div class="input-group">
+            <label>Subject</label>
 
-                <label>Subject</label>
+            <select id="subjectFilter">
+              <option value="all">All Subjects</option>
+              <option>Operating System</option>
+              <option>Database</option>
+              <option>Mathematics</option>
+            </select>
+          </div>
 
-                <select id="subjectFilter">
+          <div class="input-group">
+            <label>File Type</label>
 
-                    <option value="all">All Subjects</option>
-                    <option>Operating System</option>
-                    <option>Database</option>
-                    <option>Mathematics</option>
+            <select>
+              <option>All Types</option>
+              <option>PDF</option>
+              <option>DOCX</option>
+            </select>
+          </div>
 
-                </select>
+          <div class="input-group">
+            <label>Sort By</label>
 
-            </div>
+            <select>
+              <option>Latest</option>
+              <option>Oldest</option>
+            </select>
+          </div>
 
-            <div class="input-group">
-
-                <label>File Type</label>
-
-                <select>
-
-                    <option>All Types</option>
-                    <option>PDF</option>
-                    <option>DOCX</option>
-
-                </select>
-
-            </div>
-
-            <div class="input-group">
-
-                <label>Sort By</label>
-
-                <select>
-
-                    <option>Latest</option>
-                    <option>Oldest</option>
-
-                </select>
-
-            </div>
-
-            <button class="apply-btn">
-                <i class="fa-solid fa-paper-plane"></i>
-                Apply Filters
-            </button>
-
+          <button class="apply-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Apply Filters
+          </button>
         </aside>
 
         <!-- Right -->
 
         <div class="content">
+          <div class="top-bar">
+            <h3>
+              Showing
+              <span id="count">3</span>
+              Results
+            </h3>
 
-            <div class="top-bar">
+            <select>
+              <option>Latest</option>
+              <option>Oldest</option>
+            </select>
+          </div>
 
-                <h3>
-                    Showing
-                    <span id="count">3</span>
-                    Results
-                </h3>
+          <div id="notesContainer">
+            <!-- Card -->
 
-                <select>
+            <div class="note-card" data-subject="Operating System">
+              <img src="images/placeholder.jpg" />
 
-                    <option>Latest</option>
-                    <option>Oldest</option>
+              <div class="note-info">
+                <h2>Operating System Notes</h2>
 
-                </select>
+                <small> By John Doe • PDF • 1 day ago </small>
 
+                <p>Complete notes on OS concepts with diagrams and examples.</p>
+              </div>
+
+              <div class="card-actions">
+                <img class="bookmark" src="images/bookmark.svg" />
+
+                <button>
+                  <img src="images/download.svg" />
+                  Download
+                </button>
+              </div>
             </div>
 
-            <div id="notesContainer">
+            <div class="note-card" data-subject="Mathematics">
+              <img src="images/placeholder.jpg" />
 
-                <!-- Card -->
+              <div class="note-info">
+                <h2>Linear Algebra</h2>
 
-                <div class="note-card" data-subject="Operating System">
+                <small> By Jane Smith • PDF • 2 days ago </small>
 
-                    <img src="images/placeholder.jpg">
+                <p>Handwritten notes with solved problems.</p>
+              </div>
 
-                    <div class="note-info">
+              <div class="card-actions">
+                <img class="bookmark" src="images/bookmark.svg" />
 
-                        <h2>Operating System Notes</h2>
+                <button>
+                  <img src="images/download.svg" />
 
-                        <small>
-                            By John Doe • PDF • 1 day ago
-                        </small>
-
-                        <p>
-                            Complete notes on OS concepts with diagrams and examples.
-                        </p>
-
-                    </div>
-
-                    <div class="card-actions">
-
-                        <img class="bookmark"
-                        src="images/bookmark.svg">
-
-                        <button>
-                            <img src="images/download.svg">
-                            Download
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="note-card" data-subject="Mathematics">
-
-                    <img src="images/placeholder.jpg">
-
-                    <div class="note-info">
-
-                        <h2>Linear Algebra</h2>
-
-                        <small>
-                            By Jane Smith • PDF • 2 days ago
-                        </small>
-
-                        <p>
-                            Handwritten notes with solved problems.
-                        </p>
-
-                    </div>
-
-                    <div class="card-actions">
-
-                        <img class="bookmark"
-                        src="images/bookmark.svg">
-
-                        <button>
-
-                            <img src="images/download.svg">
-
-                            Download
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="note-card" data-subject="Database">
-
-                    <img src="images/placeholder.jpg">
-
-                    <div class="note-info">
-
-                        <h2>Database Management System</h2>
-
-                        <small>
-                            By Alex Brown • PDF • 3 days ago
-                        </small>
-
-                        <p>
-                            Important topics, questions and answers.
-                        </p>
-
-                    </div>
-
-                    <div class="card-actions">
-
-                        <img class="bookmark"
-                        src="images/bookmark.svg">
-
-                        <button>
-
-                            <img src="images/download.svg">
-
-                            Download
-
-                        </button>
-
-                    </div>
-
-                </div>
-
+                  Download
+                </button>
+              </div>
             </div>
 
-            <div class="pagination">
+            <div class="note-card" data-subject="Database">
+              <img src="images/placeholder.jpg" />
 
-                <button>&lt;</button>
+              <div class="note-info">
+                <h2>Database Management System</h2>
 
-                <button class="active">1</button>
+                <small> By Alex Brown • PDF • 3 days ago </small>
+                <p>Important topics, questions and answers.</p>
+              </div>
+              <div class="card-actions">
+                <img class="bookmark" src="images/bookmark.svg" />
 
-                <button>2</button>
+                <button>
+                  <img src="images/download.svg" />
 
-                <button>3</button>
-
-                <button>4</button>
-
-                <button>&gt;</button>
-
+                  Download
+                </button>
+              </div>
             </div>
+          </div>
 
+          <div class="pagination">
+            <button>&lt;</button>
+
+            <button class="active">1</button>
+
+            <button>2</button>
+
+            <button>3</button>
+
+            <button>4</button>
+
+            <button>&gt;</button>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
-
-</section>
-
-
-
-<footer class="footer">
-
-    <div class="footer-top">
-
+    <footer class="footer">
+      <div class="footer-top">
         <!-- Logo Section -->
         <div class="footer-col logo-col">
+          <div class="footer-logo">
+            <img src="../images/footer-icons/graduation.svg" alt="Logo" />
+            <h3>STUDENT RESOURCE HUB</h3>
+          </div>
 
-            <div class="footer-logo">
-                <img src="../images/footer-icons/graduation.svg" alt="Logo">
-                <h3>STUDENT RESOURCE HUB</h3>
-            </div>
+          <p>
+            A platform to access, share and discover quality study materials
+            easily.
+          </p>
 
-            <p>
-                A platform to access, share and discover quality
-                study materials easily.
-            </p>
-
-            <div class="social-icons">
-                <a href="#"><img src="../images/footer-icons/facebook-rounded-border-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="../images/footer-icons/twitter-rounded-border-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="../images/footer-icons/instagram-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="../images/footer-icons/youtube-svgrepo-com.svg" alt=""></a>
-            </div>
-
+          <div class="social-icons">
+            <a href="#"
+              ><img
+                src="../images/footer-icons/facebook-rounded-border-svgrepo-com.svg"
+                alt=""
+            /></a>
+            <a href="#"
+              ><img
+                src="../images/footer-icons/twitter-rounded-border-svgrepo-com.svg"
+                alt=""
+            /></a>
+            <a href="#"
+              ><img
+                src="../images/footer-icons/instagram-svgrepo-com.svg"
+                alt=""
+            /></a>
+            <a href="#"
+              ><img src="../images/footer-icons/youtube-svgrepo-com.svg" alt=""
+            /></a>
+          </div>
         </div>
 
         <!--  Links -->
         <div class="footer-col">
-            <h3>QUICK LINKS</h3>
+          <h3>QUICK LINKS</h3>
 
-            <a href="#">Home</a>
-            <a href="#">Notes</a>
-            <a href="#">Categories</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+          <a href="#">Home</a>
+          <a href="#">Notes</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
         </div>
 
         <!-- Help -->
         <div class="footer-col">
-            <h3>HELP</h3>
+          <h3>HELP</h3>
 
-            <a href="#">FAQs</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Disclaimer</a>
+          <a href="#">FAQs</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Disclaimer</a>
         </div>
 
         <!-- Contact -->
         <div class="footer-col">
-            <h3>STAY CONNECTED</h3>
+          <h3>STAY CONNECTED</h3>
 
-            <div class="contact-item">
-                <img src="../images/footer-icons/letter-svgrepo-com.svg" alt="">
-                <span>support@srhub.com</span>
-            </div>
+          <div class="contact-item">
+            <img src="../images/footer-icons/letter-svgrepo-com.svg" alt="" />
+            <span>support@srhub.com</span>
+          </div>
 
-            <div class="contact-item">
-                <img src="../images/footer-icons/call-out-svgrepo-com.svg" alt="">
-                <span>+94 98765 43210</span>
-            </div>
-
+          <div class="contact-item">
+            <img src="../images/footer-icons/call-out-svgrepo-com.svg" alt="" />
+            <span>+94 98765 43210</span>
+          </div>
         </div>
+      </div>
 
-    </div>
-
-    <div class="footer-bottom">
+      <div class="footer-bottom">
         © 2026 Student Resource Hub. All rights reserved.
-    </div>
+      </div>
+    </footer>
 
-</footer>
-
-
-
-
-<script src="../js/filter.js"></script>
-
-</body>
+    <script src="../js/filter.js"></script>
+  </body>
 </html>
