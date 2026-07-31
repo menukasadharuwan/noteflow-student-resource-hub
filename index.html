@@ -7,6 +7,7 @@
     <title>Note flow</title>
   </head>
   <body>
+
     <!--Navigation Bar-->
     <header>
       <div class="navbar">
@@ -14,23 +15,16 @@
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="#"
+              <a href="index.html"
                 ><img src="images/icons/Home.svg" alt="Home-icon" />Home</a
               >
             </li>
             <li>
-              <a href="#"
+              <a href="includes/filter.html"
                 ><img src="images/icons/Notes.svg" alt="Notes-icon" />Notes</a
               >
             </li>
-            <li>
-              <a href="#"
-                ><img
-                  src="images/icons/Category.svg"
-                  alt="Category-icon"
-                />Category</a
-              >
-            </li>
+            
             <li>
               <a href="#"
                 ><img src="images/icons/About.svg" alt="About-icon" />About</a
@@ -56,6 +50,7 @@
       </div>
     </header>
 
+
     <!--Hero section-->
     <div class="hero">
       <div class="hero-main">
@@ -66,7 +61,7 @@
           <h1 id="learn-text">
             Welcome to
           </h1>
-          <h1 id="student-text">Student Resource Hub</h1>
+          <h1 id="student-text">Student <span style="color:#0152DD;">Resource</span> Hub</h1>
           <p>
             Find high-quality notes, study materials and <br />
             resources shared by students, for students.
@@ -77,13 +72,14 @@
             <img src="images/icons/Search.svg" alt="" id="search-icon" />
           </div>
           <div class="hero-buttons">
-            <button class="btn note-btn">Explore Notes</button>
-            <button class="btn browse-btn">Upload Notes</button>
+            <a href="includes/filter.html"><button class="btn note-btn">Explore Notes</button></a>
+            <a href="includes/upload.html"><button class="btn browse-btn">Upload Notes</button></a>
           </div>
         </div>
         
       </div>
     </div>
+
 
     <!--Categories section-->
     <div class="ctg">
@@ -258,6 +254,7 @@
 
 </footer>
 
+<!-- javascript connect-->
     <script src="js/script.js"></script>
     
   </body>
