@@ -1,0 +1,114 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+/* Left Side */
+.left{
+    width:50%;
+    background:#eef2ff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+}
+
+.left img{
+    width:180px;
+    margin-bottom:20px;
+}
+
+.left h1{
+    color:#1e5eff;
+    margin-bottom:15px;
+}
+
+.left p{
+    width:70%;
+    color:#555;
+    line-height:1.6;
+}
+
+/* Right Side */
+.right{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:white;
+}
+
+.login-box{
+    width:380px;
+}
+
+.login-box h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.login-box p{
+    color:gray;
+    margin-bottom:25px;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    margin-bottom:15px;
+}
+
+button{
+    font-family:'Poppins',sans-serif;
+    border:none;
+    cursor:pointer;
+}
+
+.signup{
+    text-align:center;
+    margin-top:20px;
+}
+
+.signup a{
+    text-decoration:none;
+    color:#1e5eff;
+    font-weight:bold;
+}
+.loginbutton{
+     width:100%;
+            padding:12px;
+            background:#1e5eff;
+            color:white;
+            border:none;
+            border-radius:6px;
+            margin-top:20px;
+            cursor:pointer;
+            font-size:16px;
+}
+.logoimg{
+    width: 100px;
+}
+  
+
