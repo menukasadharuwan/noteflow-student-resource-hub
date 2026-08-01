@@ -263,8 +263,7 @@
 }
 
 .ctg-card:hover{
-  width: 16em;
-  height: 19em;
+  transform: translateY(-5px);
   cursor: pointer;
   
 }
