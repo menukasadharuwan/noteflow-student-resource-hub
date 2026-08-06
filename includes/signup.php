@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteFlow Signup</title>
-
-<<<<<<< HEAD:includes/signup.html
     <link rel="stylesheet" href="../css/sign up.css">
-=======
     <link rel="stylesheet" href="../css/Signup.css">
->>>>>>> d25e2e5277d300be6487720cdce54aa6633111ef:includes/signup.php
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
 
@@ -72,11 +68,7 @@
         <h2>Create Account</h2>
 
         <input type="text" placeholder="Full Name">
-<<<<<<< HEAD:includes/signup.html
         <input type="text" placeholder="User Name">
-=======
-        
->>>>>>> d25e2e5277d300be6487720cdce54aa6633111ef:includes/signup.php
 
         <input type="email" placeholder="Email Address">
 
@@ -177,6 +169,32 @@
         © 2026 Student Resource Hub. All rights reserved.
       </div>
     </footer>
+
+
+     <!-- java script-->
+
+    <script>
+      const nav_menu_icon = document.getElementById("menu-icon");
+      const navbar_links = document.getElementById("navbar-links");
+
+      nav_menu_icon.addEventListener("click", () => {
+        if (navbar_links.style.display == "block") {
+          navbar_links.style.display = "none";
+          nav_menu_icon.src = "../images/icons/menu.svg";
+        } else {
+          navbar_links.style.display = "block";
+          nav_menu_icon.src = "../images/icons/Cansal.svg";
+          nav_menu_icon.style.width = "35px";
+        }
+      });
+
+      //goto home page when click logo
+      const logo_button = document.getElementById("logo");
+
+      logo_button.addEventListener("click", () => {
+        window.location.href = "../index.php";
+      });
+    </script>
 
 </body>
 </html>
