@@ -16,7 +16,7 @@ nav_menu_icon.addEventListener("click", () => {
 const logo_button = document.getElementById("logo");
 
 logo_button.addEventListener("click", () => {
-  window.location.href = "../index.html";
+  window.location.href = "../index.php";
 });
 
 
