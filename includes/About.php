@@ -24,22 +24,22 @@
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="../index.html">Home</a>
+              <a href="../index.php">Home</a>
             </li>
             <li>
-              <a href="filter.html">Notes</a>
+              <a href="filter.php">Notes</a>
             </li>
 
             <li>
-              <a href="About.html">About</a>
+              <a href="About.php">About</a>
             </li>
             <li>
-              <a href="contact.html">Contact</a>
+              <a href="contact.php">Contact</a>
             </li>
           </ul>
           <div class="navbar-buttons">
-            <a href="signup.html"><button id="signup">Sign up</button></a>
-            <a href="login.html"><button id="login">Login</button></a>
+            <a href="signup.php"><button id="signup">Sign up</button></a>
+            <a href="login.php"><button id="login">Login</button></a>
           </div>
         </div>
         <div class="menu-icon">
@@ -314,7 +314,7 @@
       const logo_button = document.getElementById("logo");
 
       logo_button.addEventListener("click", () => {
-        window.location.href = "../index.html";
+        window.location.href = "../index.php";
       });
     </script>
   </body>

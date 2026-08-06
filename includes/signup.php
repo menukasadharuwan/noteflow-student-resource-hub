@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NoteFlow Login</title>
-<link rel="stylesheet" href="../css/log in.css">
-<link rel="stylesheet" href="../css/navbar.css">
-<link rel="stylesheet" href="../css/footer.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteFlow Signup</title>
+
+<<<<<<< HEAD:includes/signup.html
+    <link rel="stylesheet" href="../css/sign up.css">
+=======
+    <link rel="stylesheet" href="../css/Signup.css">
+>>>>>>> d25e2e5277d300be6487720cdce54aa6633111ef:includes/signup.php
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/footer.css">
+
+
+
+
 
 </head>
 <body>
@@ -18,22 +27,22 @@
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="../index.html">Home</a>
+              <a href="../index.php">Home</a>
             </li>
             <li>
-              <a href="filter.html">Notes</a>
+              <a href="filter.php">Notes</a>
             </li>
 
             <li>
-              <a href="About.html">About</a>
+              <a href="About.php">About</a>
             </li>
             <li>
-              <a href="About.html">Contact</a>
+              <a href="contact.php">Contact</a>
             </li>
           </ul>
           <div class="navbar-buttons">
-            <a href="signup.html"><button id="signup">Sign up</button></a>
-            <a href="login.html"><button id="login">Login</button></a>
+            <a href="signup.php"><button id="signup">Sign up</button></a>
+            <a href="login.php"><button id="login">Login</button></a>
           </div>
         </div>
         <div class="menu-icon">
@@ -42,50 +51,56 @@
       </div>
     </header>
 
+
+
 <div class="container">
 
-    <!-- Left Side -->
     <div class="left">
-
-        <img src="../images/logo.png" alt="Logo" class="logoimg" >
-
-        <h1>NoteFlow</h1>
+        <h1>Organize your <span>knowledge</span>, achieve your flow.</h1>
 
         <p>
-            Join our community of students. Access, share and organize
-            high-quality study materials designed to help you excel
-            in your academic journey.
+            Join thousands of students and educators who have
+            streamlined their study routine with our structured
+            information management system.
+        </p>
+
+      
+    </div>
+
+    <div class="form-box">
+
+        <h2>Create Account</h2>
+
+        <input type="text" placeholder="Full Name">
+<<<<<<< HEAD:includes/signup.html
+        <input type="text" placeholder="User Name">
+=======
+        
+>>>>>>> d25e2e5277d300be6487720cdce54aa6633111ef:includes/signup.php
+
+        <input type="email" placeholder="Email Address">
+
+        <div class="row">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm Password">
+        </div>
+
+        <label>
+            <input type="checkbox" style="width:auto;">
+            I agree to the Terms & Conditions
+        </label>
+
+        <button class="submit">Create Account</button>
+
+        <p style="text-align:center;margin-top:20px;">
+            Already have an account?
+            <a href="login.html">Sign In</a>
         </p>
 
     </div>
 
-    <!-- Right Side -->
-    <div class="right">
-
-        <div class="login-box">
-
-            <h1>Welcome Back</h1>
-
-            <p>Please enter your details to access your account.</p>
-
-            <label>Email Address</label>
-            <input type="email" placeholder="name@university.edu">
-
-            <label>Password</label>
-            <input type="password" placeholder="Enter your password">
-
-            <button class="loginbutton">Log In</button>
-
-            <div class="signup">
-                Don't have an account?
-                <a href="signup.html">Sign Up for free</a>
-            </div>
-
-        </div>
-
-    </div>
-
 </div>
+
 <footer class="footer">
       <div class="footer-top">
         <!-- Logo Section -->
