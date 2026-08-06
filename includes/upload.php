@@ -89,7 +89,7 @@
 
             <input
               type="text"
-              placeholder="Enter a descriptive title for your note"
+              placeholder="Enter a descriptive title for your note" id="title"
             />
           </div>
 
