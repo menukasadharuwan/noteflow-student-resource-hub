@@ -19,6 +19,9 @@ logo_button.addEventListener("click", () => {
   window.location.href = "../index.html";
 });
 
+
+
+
 //upload options
 
 const file_upload_div = document.getElementById("dropArea");

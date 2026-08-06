@@ -18,30 +18,30 @@
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>
-              <a href="index.html"
+              <a href="index.php"
                 >Home</a
               >
             </li>
             <li>
-              <a href="includes/filter.html"
+              <a href="includes/filter.php"
                 >Notes</a
               >
             </li>
             
             <li>
-              <a href="includes/About.html"
+              <a href="includes/About.php"
                 >About</a
               >
             </li>
             <li>
-              <a href="includes/contact.html"
+              <a href="includes/contact.php"
                 >Contact</a
               >
             </li>
           </ul>
           <div class="navbar-buttons">
-            <a href="includes/signup.html"><button id="signup">Sign up</button></a>
-            <a href="includes/login.html"><button id="login">Login</button></a>
+            <a href="includes/signup.php"><button id="signup">Sign up</button></a>
+            <a href="includes/login.php"><button id="login">Login</button></a>
           </div>
         </div>
         <div class="menu-icon">
@@ -72,8 +72,8 @@
             <img src="images/icons/Search.svg" alt="" id="search-icon" />
           </div>
           <div class="hero-buttons">
-            <a href="includes/filter.html"><button class="btn note-btn">Explore Notes</button></a>
-            <a href="includes/upload.html"><button class="btn browse-btn">Upload Notes</button></a>
+            <a href="includes/filter.php"><button class="btn note-btn">Explore Notes</button></a>
+            <a href="includes/upload.php"><button class="btn browse-btn">Upload Notes</button></a>
           </div>
         </div>
         
