@@ -13,7 +13,7 @@
     <header>
       <div class="navbar">
         <div class="navbar-logo">
-          <img src="../images/logo.png" alt="Logo" />
+          <img src="../images/logo.png" alt="Logo" id="logo"/>
         </div>
         <div class="navbar-links" id="navbar-links">
           <ul>
@@ -21,14 +21,14 @@
               <a href="../index.php">Home</a>
             </li>
             <li>
-              <a href="filter.php">Notes</a>
+              <a href="../includes/filter.php">Notes</a>
             </li>
 
             <li>
-              <a href="About.php">About</a>
+              <a href="../includes/About.php">About</a>
             </li>
             <li>
-              <a href="About.php">Contact</a>
+              <a href="../includes/About.php">Contact</a>
             </li>
           </ul>
           <div class="navbar-buttons">

@@ -6,20 +6,15 @@
     <title>NoteFlow Signup</title>
 
     <link rel="stylesheet" href="../css/Signup.css">
-
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
-
-
-
-
 
 </head>
 <body>
     <header>
       <div class="navbar">
         <div class="navbar-logo">
-          <img src="../images/logo.png" alt="Logo" />
+          <img src="../images/logo.png" alt="Logo" id="logo"/>
         </div>
         <div class="navbar-links" id="navbar-links">
           <ul>
@@ -27,14 +22,14 @@
               <a href="../index.php">Home</a>
             </li>
             <li>
-              <a href="filter.php">Notes</a>
+              <a href="../includes/filter.php">Notes</a>
             </li>
 
             <li>
-              <a href="About.php">About</a>
+              <a href="../includes/About.php">About</a>
             </li>
             <li>
-              <a href="contact.php">Contact</a>
+              <a href="../includes/contact.php">Contact</a>
             </li>
           </ul>
           <div class="navbar-buttons">
@@ -63,34 +58,36 @@
 
       
     </div>
+    <form >
+      <div class="form-box">
 
-    <div class="form-box">
+          <h2>Create Account</h2>
 
-        <h2>Create Account</h2>
+          <input type="text" placeholder="Full Name">
+          
 
-        <input type="text" placeholder="Full Name">
-        
+          <input type="email" placeholder="Email Address">
 
-        <input type="email" placeholder="Email Address">
+          <div class="row">
+              <input type="password" placeholder="Password">
+              <input type="password" placeholder="Confirm Password">
+          </div>
 
-        <div class="row">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm Password">
-        </div>
+          <label>
+              <input type="checkbox" style="width:auto;">
+              I agree to the Terms & Conditions
+          </label>
 
-        <label>
-            <input type="checkbox" style="width:auto;">
-            I agree to the Terms & Conditions
-        </label>
+          <button class="submit">Create Account</button>
 
-        <button class="submit">Create Account</button>
+          <p style="text-align:center;margin-top:20px;">
+              Already have an account?
+              <a href="login.html">Sign In</a>
+          </p>
 
-        <p style="text-align:center;margin-top:20px;">
-            Already have an account?
-            <a href="login.html">Sign In</a>
-        </p>
+      </div>
 
-    </div>
+    </form>
 
 </div>
 

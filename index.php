@@ -40,8 +40,8 @@
             </li>
           </ul>
           <div class="navbar-buttons">
-            <a href="includes/signup.php"><button id="signup">Sign up</button></a>
-            <a href="includes/login.php"><button id="login">Login</button></a>
+            <a href="auth/signup.php"><button id="signup">Sign up</button></a>
+            <a href="auth/login.php"><button id="login">Login</button></a>
           </div>
         </div>
         <div class="menu-icon">
