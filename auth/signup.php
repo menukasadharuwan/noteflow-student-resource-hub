@@ -58,25 +58,29 @@
 
       
     </div>
-    <form >
+    <form method="post" action="sesson.php">
       <div class="form-box">
 
           <h2>Create Account</h2>
+          <?php
 
-          <input type="text" placeholder="Full Name">
-          
+          if (isset($_GET["error"])) {
+            echo "<p>" . htmlspecialchars($_GET["error"]) . "</p>";
+            }
+          ?>
 
-          <input type="email" placeholder="Email Address">
+          <input type="text" placeholder="Full Name" name="name">
+          <input type="text" placeholder="Username" name="username">
+          <input type="hidden" name="action" value="register">
+
+          <input type="email" placeholder="Email Address" name="email">
 
           <div class="row">
-              <input type="password" placeholder="Password">
-              <input type="password" placeholder="Confirm Password">
+              <input type="password" placeholder="Password" name="password">
+              <input type="password" placeholder="Confirm Password" name="repassword">
           </div>
 
-          <label>
-              <input type="checkbox" style="width:auto;">
-              I agree to the Terms & Conditions
-          </label>
+        
 
           <button class="submit">Create Account</button>
 
