@@ -1,3 +1,19 @@
+const logoutButton = document.getElementById("logout-btn");
+
+logoutButton.addEventListener("click", function (event) {
+
+    const confirmLogout = confirm(
+        "Are you sure you want to logout?"
+    );
+
+    if (!confirmLogout) {
+        event.preventDefault();
+    }
+
+});
+
+//nav bar javascript
+
 const nav_menu_icon = document.getElementById("menu-icon");
 const navbar_links = document.getElementById("navbar-links");
 
@@ -12,12 +28,4 @@ nav_menu_icon.addEventListener("click",()=>{
         nav_menu_icon.style.width = "35px"
         
     }
-})
-
-
-//goto home page when click logo
-const logo_button = document.getElementById("logo");
-
-logo_button.addEventListener("click",()=>{
-    window.location.href = "/noteflow/index.php"
 })

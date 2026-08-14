@@ -102,6 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $_SESSION["user_id"] = $user["id"];
                     $_SESSION["username"] = $user["username"];
                     $_SESSION["email"] = $user["email"];
+                    $_SESSION["name"] = $user["name"];
 
                     header("Location: ../index.php");
                     exit();

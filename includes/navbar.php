@@ -41,7 +41,7 @@ require_once __DIR__ . "/../auth/session.php";
           <?php if(isset($_SESSION["user_id"])): ?>
 
           <!--User is loggin in -->
-          <a>
+          <a href="profile.php">
             <img src="/Noteflow/images/profile.jpg" id="user-profile">
           </a>
 
@@ -56,7 +56,7 @@ require_once __DIR__ . "/../auth/session.php";
           </div>
         </div>
         <div class="menu-icon">
-          <img src="images/icons/Menu.svg" alt="menu" id="menu-icon" />
+          <img src="/Noteflow/images/icons/Menu.svg" alt="menu" id="menu-icon" />
         </div>
       </div>
     </header>
