@@ -86,7 +86,7 @@
 
           <p style="text-align:center;margin-top:20px;">
               Already have an account?
-              <a href="login.html">Sign In</a>
+              <a href="login.php">Sign In</a>
           </p>
 
       </div>

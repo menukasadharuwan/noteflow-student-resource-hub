@@ -63,24 +63,30 @@
     <div class="right">
 
         <div class="login-box">
-
+            <form action="sesson.php" method="POST">
             <h1>Welcome Back</h1>
 
             <p>Please enter your details to access your account.</p>
+          <?php
 
+          if (isset($_GET["error"])) {
+            echo "<p>" . htmlspecialchars($_GET["error"]) . "</p>";
+            }
+          ?>
             <label>Email Address</label>
-            <input type="email" placeholder="name@university.edu">
+            <input type="email" placeholder="name@university.edu" name="email">
+            <input type="hidden" name="action" value="login">
 
             <label>Password</label>
-            <input type="password" placeholder="Enter your password">
+            <input type="password" name="password" placeholder="Enter your password">
 
-            <button class="loginbutton">Log In</button>
+            <button class="loginbutton ">Log In</button>
 
             <div class="signup">
                 Don't have an account?
                 <a href="signup.html">Sign Up for free</a>
             </div>
-
+            </form>
         </div>
 
     </div>
