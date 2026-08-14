@@ -94,6 +94,15 @@
   display: none;
 }
 
+/* user profile */
+#user-profile{
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+}
+
+
+
 /*  Tablet responsive */
 
 @media (max-width: 992px) {

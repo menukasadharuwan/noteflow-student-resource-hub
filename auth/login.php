@@ -1,3 +1,17 @@
+<?php
+//check if user loggin
+
+require_once "session.php";
+
+if(isset($_SESSION["user_id"])){
+  header("Location: ../index.php");
+  exit();
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,37 +24,9 @@
 
 </head>
 <body>
-    <header>
-      <div class="navbar">
-        <div class="navbar-logo">
-          <img src="../images/logo.png" alt="Logo" id="logo"/>
-        </div>
-        <div class="navbar-links" id="navbar-links">
-          <ul>
-            <li>
-              <a href="../index.php">Home</a>
-            </li>
-            <li>
-              <a href="../includes/filter.php">Notes</a>
-            </li>
-
-            <li>
-              <a href="../includes/About.php">About</a>
-            </li>
-            <li>
-              <a href="../includes/About.php">Contact</a>
-            </li>
-          </ul>
-          <div class="navbar-buttons">
-            <a href="signup.php"><button id="signup">Sign up</button></a>
-            <a href="login.php"><button id="login">Login</button></a>
-          </div>
-        </div>
-        <div class="menu-icon">
-          <img src="../images/icons/Menu.svg" alt="menu" id="menu-icon" />
-        </div>
-      </div>
-    </header>
+    
+    <!--Navigation Bar-->
+    <?php require_once "../includes/navbar.php" ?>
 
 <div class="container">
 
@@ -63,7 +49,7 @@
     <div class="right">
 
         <div class="login-box">
-            <form action="sesson.php" method="POST">
+            <form action="session.php" method="POST">
             <h1>Welcome Back</h1>
 
             <p>Please enter your details to access your account.</p>

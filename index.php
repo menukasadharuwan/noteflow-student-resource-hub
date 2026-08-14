@@ -1,3 +1,12 @@
+
+<?php
+require_once "auth/session.php";
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,45 +19,10 @@
   </head>
   <body>
 
-    <!--Navigation Bar-->
-
-    <header>
-      <div class="navbar">
-        <div class="navbar-logo"><img src="images/logo.png" alt="Logo" id="logo"/></div>
-        <div class="navbar-links" id="navbar-links">
-          <ul>
-            <li>
-              <a href="index.php"
-                >Home</a
-              >
-            </li>
-            <li>
-              <a href="includes/filter.php"
-                >Notes</a
-              >
-            </li>
-            
-            <li>
-              <a href="includes/About.php"
-                >About</a
-              >
-            </li>
-            <li>
-              <a href="includes/contact.php"
-                >Contact</a
-              >
-            </li>
-          </ul>
-          <div class="navbar-buttons">
-            <a href="auth/signup.php"><button id="signup">Sign up</button></a>
-            <a href="auth/login.php"><button id="login">Login</button></a>
-          </div>
-        </div>
-        <div class="menu-icon">
-          <img src="images/icons/Menu.svg" alt="menu" id="menu-icon" />
-        </div>
-      </div>
-    </header>
+  <!-- Nav bar -->
+    <?php
+  require_once "includes/navbar.php";
+  ?>
 
 
     <!--Hero section-->
@@ -183,74 +157,9 @@
 </section>
 
 
-<footer class="footer">
-
-    <div class="footer-top">
-
-        <!-- Logo Section -->
-        <div class="footer-col logo-col">
-
-            <div class="footer-logo">
-                <img src="images/footer-icons/graduation.svg" alt="Logo">
-                <h3>STUDENT RESOURCE HUB</h3>
-            </div>
-
-            <p>
-                A platform to access, share and discover quality
-                study materials easily.
-            </p>
-
-            <div class="social-icons">
-                <a href="#"><img src="images/footer-icons/facebook-rounded-border-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="images/footer-icons/twitter-rounded-border-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="images/footer-icons/instagram-svgrepo-com.svg" alt=""></a>
-                <a href="#"><img src="images/footer-icons/youtube-svgrepo-com.svg" alt=""></a>
-            </div>
-
-        </div>
-
-        <!--  Links -->
-        <div class="footer-col">
-            <h3>QUICK LINKS</h3>
-
-            <a href="index.html">Home</a>
-            <a href="includes/filter.html">Notes</a>
-            <a href="includes/About.html">About</a>
-            <a href="includes/contact.html">Contact</a>
-        </div>
-
-        <!-- Help -->
-        <div class="footer-col">
-            <h3>HELP</h3>
-
-            <a href="#">FAQs</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-col">
-            <h3>STAY CONNECTED</h3>
-
-            <div class="contact-item">
-                <img src="images/footer-icons/letter-svgrepo-com.svg" alt="">
-                <span>info@srhub.com</span>
-            </div>
-
-            <div class="contact-item">
-                <img src="images/footer-icons/call-out-svgrepo-com.svg" alt="">
-                <span>+94 98765 43210</span>
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 Student Resource Hub. All rights reserved.
-    </div>
-
-</footer>
+<?php
+require_once "includes/footer.php";
+?>
 
 <!-- javascript connect-->
     <script src="js/script.js"></script>

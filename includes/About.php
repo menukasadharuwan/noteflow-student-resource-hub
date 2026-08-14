@@ -16,37 +16,7 @@
 
   <body>
     <!--Navigation Bar-->
-    <header>
-      <div class="navbar">
-        <div class="navbar-logo">
-          <img src="../images/logo.png" alt="Logo" id="logo"/>
-        </div>
-        <div class="navbar-links" id="navbar-links">
-          <ul>
-            <li>
-              <a href="../index.php">Home</a>
-            </li>
-            <li>
-              <a href="filter.php">Notes</a>
-            </li>
-
-            <li>
-              <a href="About.php">About</a>
-            </li>
-            <li>
-              <a href="contact.php">Contact</a>
-            </li>
-          </ul>
-          <div class="navbar-buttons">
-            <a href="../auth/signup.php"><button id="signup">Sign up</button></a>
-            <a href="../auth/login.php"><button id="login">Login</button></a>
-          </div>
-        </div>
-        <div class="menu-icon">
-          <img src="../images/icons/Menu.svg" alt="menu" id="menu-icon" />
-        </div>
-      </div>
-    </header>
+    <?php require_once "navbar.php" ?>
 
     <section class="about-section">
       <div class="about-container">

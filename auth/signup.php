@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,37 +14,9 @@
 
 </head>
 <body>
-    <header>
-      <div class="navbar">
-        <div class="navbar-logo">
-          <img src="../images/logo.png" alt="Logo" id="logo"/>
-        </div>
-        <div class="navbar-links" id="navbar-links">
-          <ul>
-            <li>
-              <a href="../index.php">Home</a>
-            </li>
-            <li>
-              <a href="../includes/filter.php">Notes</a>
-            </li>
-
-            <li>
-              <a href="../includes/About.php">About</a>
-            </li>
-            <li>
-              <a href="../includes/contact.php">Contact</a>
-            </li>
-          </ul>
-          <div class="navbar-buttons">
-            <a href="signup.php"><button id="signup">Sign up</button></a>
-            <a href="login.php"><button id="login">Login</button></a>
-          </div>
-        </div>
-        <div class="menu-icon">
-          <img src="../images/icons/Menu.svg" alt="menu" id="menu-icon" />
-        </div>
-      </div>
-    </header>
+    
+    <!--Navigation Bar-->
+    <?php require_once "../includes/navbar.php" ?>
 
 
 
@@ -58,11 +33,11 @@
 
       
     </div>
-    <form method="post" action="sesson.php">
+    <form method="post" action="session.php">
       <div class="form-box">
 
           <h2>Create Account</h2>
-          
+
           <?php
 
           if (isset($_GET["error"])) {
