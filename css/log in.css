@@ -111,9 +111,20 @@ button{
 .logoimg{
     width: 100px;
 }
-  /* ===========================
-   Responsive Design
-=========================== */
+
+ #php-error{
+            background-color: rgba(255, 0, 0, 0.253);
+            padding: 10px;
+            border-radius: 2px;
+            border: 1px solid red;
+            color: black;
+            
+            
+        }
+
+
+
+  /*   Responsive Design */
 
 @media (max-width: 768px) {
 

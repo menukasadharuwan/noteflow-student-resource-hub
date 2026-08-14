@@ -70,7 +70,7 @@
           <?php
 
           if (isset($_GET["error"])) {
-            echo "<p>" . htmlspecialchars($_GET["error"]) . "</p>";
+            echo "<p id='php-error'> " . htmlspecialchars($_GET["error"]) . "</p>";
             }
           ?>
             <label>Email Address</label>

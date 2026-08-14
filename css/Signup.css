@@ -87,9 +87,23 @@
             cursor:pointer;
             font-size:16px;
         }
-        /* ===========================
-   Responsive Design
-=========================== */
+
+
+
+        #php-error{
+            background-color: rgba(255, 0, 0, 0.253);
+            padding: 10px;
+            border-radius: 2px;
+            border: 1px solid red;
+            
+            
+        }
+
+
+
+
+
+        /* responsive */
 
 @media (max-width: 768px) {
 

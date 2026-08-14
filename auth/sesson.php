@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if($result->num_rows > 0){
             //echo "Email alredy exits";
-            header("Location: signup.php?error=Email already exists");
+            header("Location: signup.php?error=Email already exists.Try another email.");
             exit();
         }else{
 
@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     }else{
                     //echo "not same";
-                    header("Location: signup.php?error=Password not equal! Try agan.");
+                    header("Location: signup.php?error=your password does not match.Try agan.");
                     exit();
                 }
                 }else{
