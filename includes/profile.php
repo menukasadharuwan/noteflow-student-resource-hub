@@ -136,6 +136,11 @@ if (!isset($_SESSION["user_id"])) {
                         <p>You can securely sign out of your NoteFlow account.</p>
                     </div>
 
+                    <div class="profile-button">
+                    <a href="#" id="edit-button">
+                        EDIT
+                    </a>
+
                     <a href="/Noteflow/auth/logout.php"
                        class="logout-btn"
                        id="logout-btn">
@@ -144,7 +149,7 @@ if (!isset($_SESSION["user_id"])) {
                         Logout
 
                     </a>
-
+                    </div>
                 </div>
 
             </div>
@@ -153,6 +158,7 @@ if (!isset($_SESSION["user_id"])) {
 
     </main>
 
+    
 
     <!-- Footer -->
     <?php require_once "footer.php"; ?>

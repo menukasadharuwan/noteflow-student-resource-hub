@@ -11,8 +11,6 @@ body {
 }
 
 
-
-
 .profile-page {
     min-height: 80vh;
     padding: 70px 7%;
@@ -219,6 +217,21 @@ body {
     background: #e53935;
     color: white;
 }
+.profile-button{
+    display: flex;
+    gap: 20px;
+}
+
+#edit-button{
+    min-width: 130px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid green;
+    padding: 13px 28px;
+    color: green;
+
+}
 
 
 /*  Tablet responsive */
@@ -314,6 +327,12 @@ body {
     .logout-btn {
         width: 100%;
     }
+
+    .profile-button{
+    
+    gap: 10px;
+    width: 100%;
+}
 }
 
 
@@ -335,3 +354,7 @@ body {
         font-size: 15px;
     }
 }
+
+
+
+

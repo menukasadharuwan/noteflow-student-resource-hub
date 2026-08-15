@@ -1,10 +1,9 @@
-
+<!-- php connect -->
 <?php
 require_once "auth/session.php";
 
 
 ?>
-
 
 
 <!doctype html>
@@ -28,14 +27,18 @@ require_once "auth/session.php";
     <!--Hero section-->
     <div class="hero">
       <div class="hero-main">
+
         <div class="hero-right">
           <img src="images/heroimage.jpg" alt="hero image" id="heroimg" />
         </div>
+
         <div class="hero-left">
           <h1 id="learn-text">
             Welcome to
           </h1>
+
           <h1 id="student-text">Student <span style="color:#0152DD;">Resource</span> Hub</h1>
+
           <p>
             Find high-quality notes, study materials and <br />
             resources shared by students, for students.
@@ -45,6 +48,7 @@ require_once "auth/session.php";
             <input type="text" placeholder="Search notes,subject.." />
             <img src="images/icons/Search.svg" alt="" id="search-icon" />
           </div>
+
           <div class="hero-buttons">
             <a href="includes/filter.php"><button class="btn note-btn">Explore Notes</button></a>
             <a href="includes/upload.php"><button class="btn browse-btn">Upload Notes</button></a>

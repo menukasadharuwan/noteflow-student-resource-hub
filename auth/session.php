@@ -1,12 +1,14 @@
 <?php
 
+//Session start
 session_start();
 require_once "connect.php";
 
-
+//Check If requests is POST
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $action = $_POST["action"];
 
+    //Register form
     if($action == "register"){
         $name = $_POST["name"];
         $username = $_POST["username"];
@@ -42,7 +44,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     if($save_data->execute()){
                     // echo "user add successfull";
-                    header("Location: ../index.php");
+
+                    header("Location: login.php");
                         exit();
                     }else{
                         //echo "Fail to create account";

@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #edf5ff;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Main page */
+
+.edit-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+
+/* Form */
+
+.details-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Title */
+
+.details-form h2 {
+    text-align: center;
+    color: #14264a;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+
+/* Blue line */
+
+.title-line {
+    width: 60px;
+    height: 4px;
+    margin: 0 auto 30px;
+    background-color: #1268e8;
+    border-radius: 5px;
+}
+
+
+/* Form group */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+/* Label */
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #14264a;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* Input */
+
+.form-group input {
+    width: 100%;
+    height: 50px;
+    padding: 0 15px;
+    border: 1px solid #d9e2ef;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+
+/* Input focus */
+
+.form-group input:focus {
+    border-color: #1268e8;
+    box-shadow: 0 0 0 3px rgba(18, 104, 232, 0.10);
+}
+
+
+/* Button */
+
+.details-form button {
+    width: 100%;
+    height: 50px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1268e8;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* Button hover */
+
+.details-form button:hover {
+    background-color: #0d55c7;
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .details-form {
+        max-width: 550px;
+        padding: 35px;
+    }
+
+    .details-form h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .edit-page {
+        padding: 25px 15px;
+    }
+
+    .details-form {
+        padding: 28px 25px;
+    }
+
+    .details-form h2 {
+        font-size: 25px;
+    }
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+
+    .form-group input {
+        height: 46px;
+        font-size: 15px;
+    }
+
+    .details-form button {
+        height: 46px;
+        font-size: 15px;
+    }
+}
+
+
+/* Small Mobile */
+
+@media (max-width: 380px) {
+
+    .edit-page {
+        padding: 18px 10px;
+    }
+
+    .details-form {
+        padding: 22px 18px;
+        border-radius: 10px;
+    }
+
+    .details-form h2 {
+        font-size: 22px;
+    }
+
+    .title-line {
+        width: 50px;
+        height: 3px;
+        margin-bottom: 22px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .form-group input {
+        height: 43px;
+        font-size: 14px;
+    }
+
+    .details-form button {
+        height: 43px;
+        font-size: 14px;
+    }
+}
