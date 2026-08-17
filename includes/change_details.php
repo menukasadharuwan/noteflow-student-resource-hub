@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["email"] = $email;
 
         $message = "Profile updated successfully!";
-        echo "done";
+       // echo "done";
     } else {
         $message = "Update failed!";
     }

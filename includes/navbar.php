@@ -20,18 +20,18 @@ require_once __DIR__ . "/../auth/session.php";
               >
             </li>
             <li>
-              <a href="/Noteflow/includes/filter.php"
+              <a href="/noteflow-student-resource-hub/includes/filter.php"
                 >Notes</a
               >
             </li>
             
             <li>
-              <a href="/Noteflow/includes/About.php"
+              <a href="/noteflow-student-resource-hub/includes/About.php"
                 >About</a
               >
             </li>
             <li>
-              <a href="/Noteflow/includes/contact.php"
+              <a href="/noteflow-student-resource-hub/includes/contact.php"
                 >Contact</a
               >
             </li>
@@ -41,22 +41,22 @@ require_once __DIR__ . "/../auth/session.php";
           <?php if(isset($_SESSION["user_id"])): ?>
 
           <!--User is loggin in -->
-          <a href="/Noteflow/includes/profile.php">
-            <img src="/Noteflow/images/profile.jpg" id="user-profile">
+          <a href="/noteflow-student-resource-hub/includes/profile.php">
+            <img src="/noteflow-student-resource-hub/images/profile.jpg" id="user-profile">
           </a>
 
           <?php else: ?>
 
             <!-- User is not loggin -->
-            <a href="/Noteflow/auth/signup.php"><button id="signup">Sign up</button></a>
-            <a href="/Noteflow/auth/login.php"><button id="login">Login</button></a>
+            <a href="/noteflow-student-resource-hub/auth/signup.php"><button id="signup">Sign up</button></a>
+            <a href="/noteflow-student-resource-hub/auth/login.php"><button id="login">Login</button></a>
 
             <?php endif; ?>
 
           </div>
         </div>
         <div class="menu-icon">
-          <img src="/Noteflow/images/icons/Menu.svg" alt="menu" id="menu-icon" />
+          <img src="/noteflow-student-resource-hub/images/icons/Menu.svg" alt="menu" id="menu-icon" />
         </div>
       </div>
     </header>
