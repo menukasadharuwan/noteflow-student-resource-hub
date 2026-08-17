@@ -11,7 +11,7 @@ require_once __DIR__ . "/../auth/session.php";
 
     <header>
       <div class="navbar">
-        <div class="navbar-logo"><img src="/Noteflow/images/logo.png" alt="Logo" id="logo"/></div>
+        <div class="navbar-logo"><img src="/noteflow-student-resource-hub/images/logo.png" alt="Logo" id="logo"/></div>
         <div class="navbar-links" id="navbar-links">
           <ul>
             <li>

@@ -6,7 +6,7 @@
         <div class="footer-col logo-col">
 
             <div class="footer-logo">
-                <img src="/Noteflow/images/footer-icons/graduation.svg" alt="Logo">
+                <img src="/noteflow-student-resource-hub/images/footer-icons/graduation.svg" alt="Logo">
                 <h3>STUDENT RESOURCE HUB</h3>
             </div>
 
@@ -16,10 +16,10 @@
             </p>
 
             <div class="social-icons">
-                <a href="#"><img src="/Noteflow/images/footer-icons/facebook-rounded-border-svgrepo-com.svg" alt="facebook"></a>
-                <a href="#"><img src="/Noteflow/images/footer-icons/twitter-rounded-border-svgrepo-com.svg" alt="twitter"></a>
-                <a href="#"><img src="/Noteflow/images/footer-icons/instagram-svgrepo-com.svg" alt="instagram"></a>
-                <a href="#"><img src="/Noteflow/images/footer-icons/youtube-svgrepo-com.svg" alt="youtube"></a>
+                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/facebook-rounded-border-svgrepo-com.svg" alt="facebook"></a>
+                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/twitter-rounded-border-svgrepo-com.svg" alt="twitter"></a>
+                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/instagram-svgrepo-com.svg" alt="instagram"></a>
+                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/youtube-svgrepo-com.svg" alt="youtube"></a>
             </div>
 
         </div>
@@ -29,9 +29,9 @@
             <h3>QUICK LINKS</h3>
 
             <a href="../index.php">Home</a>
-            <a href="/Noteflow/includes/filter.php">Notes</a>
-            <a href="/Noteflow/includes/About.php">About</a>
-            <a href="/Noteflow/includes/contact.php">Contact</a>
+            <a href="/noteflow-student-resource-hub/includes/filter.php">Notes</a>
+            <a href="/noteflow-student-resource-hub/includes/About.php">About</a>
+            <a href="/noteflow-student-resource-hub/includes/contact.php">Contact</a>
         </div>
 
         <!-- Help -->
@@ -48,12 +48,12 @@
             <h3>STAY CONNECTED</h3>
 
             <div class="contact-item">
-                <img src="/Noteflow/images/footer-icons/letter-svgrepo-com.svg" alt="">
+                <img src="/noteflow-student-resource-hub/images/footer-icons/letter-svgrepo-com.svg" alt="">
                 <span>info@srhub.com</span>
             </div>
 
             <div class="contact-item">
-                <img src="/Noteflow/images/footer-icons/call-out-svgrepo-com.svg" alt="">
+                <img src="/noteflow-student-resource-hub/images/footer-icons/call-out-svgrepo-com.svg" alt="">
                 <span>+94 98765 43210</span>
             </div>
 

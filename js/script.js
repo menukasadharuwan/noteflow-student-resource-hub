@@ -19,5 +19,5 @@ nav_menu_icon.addEventListener("click",()=>{
 const logo_button = document.getElementById("logo");
 
 logo_button.addEventListener("click",()=>{
-    window.location.href = "/Noteflow/index.php"
+    window.location.href = "/noteflow-student-resource-hub/index.php"
 })

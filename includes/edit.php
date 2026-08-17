@@ -26,14 +26,15 @@
 
             <h2>Change Details</h2>
 
+          
+            <div class="title-line"></div>
+            
             <?php
 
           if (isset($_GET["error"])) {
             echo "<p id='php-error'>" . htmlspecialchars($_GET["error"]) . "</p>";
             }
           ?>
-          
-            <div class="title-line"></div>
 
             <form action="change_details.php" method="POST">
 

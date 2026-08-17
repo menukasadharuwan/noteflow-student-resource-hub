@@ -8,6 +8,10 @@ require_once __DIR__ . "/../auth/session.php";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $id = $_SESSION["user_id"];
+    $s_email = $_SESSION["email"];
+    $s_username = $_SESSION["username"];
+
+
     $name = $_POST["name"];
     $username = $_POST["username"];
     $email = $_POST["email"];
@@ -22,17 +26,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username_result = $conn->query($chk_username);
 
     //check email exits
-    if($email_result->num_rows > 0){
-        header("Location: edit.php?error=Email alredy exits!");
-        exit();
+    if($s_email != $email){
+        if($email_result->num_rows > 0){
+            header("Location: edit.php?error=Email alredy exits!");
+            exit();
+        }
+
     }
 
     //check username exits
-    if($username_result->num_rows > 0){
-        header("Location: edit.php?error=Username alredy exits!");
-        exit();
-    }
+    if($s_username != $username){
+        if($username_result->num_rows > 0){
+            header("Location: edit.php?error=Username alredy exits!");
+            exit();
+        }
 
+    }
 
 
 
@@ -52,10 +61,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["email"] = $email;
 
         $message = "Profile updated successfully!";
-       // echo "done";
+       header("Location: ../index.php");
+       exit();
     } else {
         $message = "Update failed!";
+        header("Location: ../index.php");
+        exit();
     }
+
+    
 }
 
 ?>
