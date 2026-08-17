@@ -11,9 +11,18 @@ require_once "auth/session.php";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap Icons -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    >
     <link rel="stylesheet" href="css/style.css" >
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    
+    
+    
     <title>Note flow</title>
   </head>
   <body>
@@ -25,37 +34,72 @@ require_once "auth/session.php";
 
 
     <!--Hero section-->
+     
     <div class="hero">
-      <div class="hero-main">
 
-        <div class="hero-right">
-          <img src="images/heroimage.jpg" alt="hero image" id="heroimg" />
+        <div class="hero-main">
+
+            <!-- Image -->
+            <div class="hero-right">
+
+                <img 
+                    src="images/heroimage.jpg" 
+                    alt="Hero image" 
+                    id="heroimg"
+                >
+
+            </div>
+
+
+            <!-- Content -->
+            <div class="hero-left">
+
+                <h1 id="learn-text">
+                    Welcome to
+                </h1>
+
+                <h1 id="student-text">
+                    Student 
+                    <span>Resource</span> 
+                    Hub
+                </h1>
+
+                <p>
+                    Find high-quality notes, study materials and <br>
+                    resources shared by students, for students.
+                </p>
+
+
+                <div class="search-bar">
+    <input type="text" placeholder="Search notes, subject...">
+
+    <button type="button" class="search-btn">
+        <i class="bi bi-search"></i>
+    </button>
+</div>
+
+
+                <!-- Buttons -->
+                <div class="hero-buttons">
+
+                    <a href="includes/filter.php">
+                        <button class="btn note-btn">
+                            Explore Notes
+                        </button>
+                    </a>
+
+                    <a href="includes/upload.php">
+                        <button class="btn browse-btn">
+                            Upload Notes
+                        </button>
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="hero-left">
-          <h1 id="learn-text">
-            Welcome to
-          </h1>
-
-          <h1 id="student-text">Student <span style="color:#0152DD;">Resource</span> Hub</h1>
-
-          <p>
-            Find high-quality notes, study materials and <br />
-            resources shared by students, for students.
-          </p>
-
-          <div class="search-bar">
-            <input type="text" placeholder="Search notes,subject.." />
-            <img src="images/icons/Search.svg" alt="" id="search-icon" />
-          </div>
-
-          <div class="hero-buttons">
-            <a href="includes/filter.php"><button class="btn note-btn">Explore Notes</button></a>
-            <a href="includes/upload.php"><button class="btn browse-btn">Upload Notes</button></a>
-          </div>
-        </div>
-        
-      </div>
     </div>
 
 

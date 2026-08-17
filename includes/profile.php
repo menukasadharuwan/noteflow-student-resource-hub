@@ -137,7 +137,7 @@ if (!isset($_SESSION["user_id"])) {
                     </div>
 
                     <div class="profile-button">
-                    <a href="#" id="edit-button">
+                    <a href="edit.php" id="edit-button">
                         EDIT
                     </a>
 

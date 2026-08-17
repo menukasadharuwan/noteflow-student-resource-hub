@@ -9,211 +9,463 @@
 
 /*  Hero section */
 
-.hero{
+.hero {
     width: 100%;
-    min-height: 100vh;
-    background-color: #ECF4FE;
-    z-index: 1;
-    
-}
-
-
-
-
-.hero-main{
+    min-height: calc(100vh - 95px);
+    background-color: #ecf4fe;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 3em;
-    padding: 2em 2%;
-    
 }
+
+
+/* Hero main */
+
+.hero-main {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 60px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
 
 .hero-right {
-  width: 38%;
-}
-.hero-left {
-  position: relative;
-  top: 2em;
-}
-
-#search-icon {
-  width: 20px;
-  height: 20px;
-}
-
-#heroimg {
-  width: 30em;
-  height: 20em;
-  object-fit: cover;
-}
-
-#learn-text {
-  font-size: clamp(2.2rem, 4.5vw, 4.5rem);
-}
-#ln-1 {
-  color: #0156ee;
-}
-#ln-2 {
-  color: #09be5e;
-}
-#ln-3 {
-  color: #fa9726;
-}
-#student-text {
-  font-size: clamp(2.2rem, 4.5vw, 4.6rem);
-}
-
-.hero-left p {
-  font-size: clamp(1rem, 2vw, 2rem);
-  opacity: 0.7;
-}
-
-.search-bar {
-  background-color: #0055e2;
-  width: 80%;
-  position: relative;
-  margin-top: 3em;
-  border-radius: 7px;
-}
-
-.search-bar input {
-  width: 90%;
-  height: 3.5em;
-  border-radius: 7px 0 0 7px;
-  
-}
-
-.search-bar input::placeholder {
-  font-size: clamp(1rem, 2vw, 1.1rem);
-  position: relative;
-  left: 1.4em;
-  top: 3px;
-}
-
-#search-icon {
-  position: absolute;
-  left: auto;
-  right: 16px;
-  top: 8px;
-
-  width: 28px;
-  height: 28px;
-}
-
-.hero-buttons {
-  margin-top: 4em;
-  display: flex;
-  gap: 2em;
-}
-
-.btn {
-  width: clamp(8em, 17vw, 14em);
-  padding: 1em;
-  font-size: clamp(0.7rem, 1.3vw, 1.1rem);
-  font-weight: 600;
-  border-radius: 8px;
-}
-.note-btn {
-  background-color: #0054e1;
-  color: white;
-  border: none;
-  transition: 0.3s ease;
-}
-.note-btn:hover {
-  border: 2px solid #0054e1;
-  color: #0054e1;
-  background-color: white;
-}
-.browse-btn {
-  border: 2px solid #0054e1;
-  color: #0054e1;
-  transition: 0.3s ease;
-  white-space: nowrap;
-}
-.browse-btn:hover {
-  background-color: #0054e1;
-  color: white;
-}
-
-#heroimg {
-  border-radius: 10px;
-  border: 10px solid rgb(253, 253, 253);
-  width: 100%;
-  height: auto;
-  position: relative;
-}
-
-/*hero tablet responsive */
-
-@media (max-width: 992px) {
-  #search-icon {
-    position: absolute;
-    left: auto;
-    right: 16px;
-    top: 8px;
-    width: 25px;
-    height: 25px;
-  }
-  .search-bar input {
-    width: 85%;
-    height: 3.2em;
-    border-radius: 7px 0 0 7px;
-  }
-}
-
-/* Hero mobile responsive */
-
-@media (max-width: 768px) {
-  
- 
-  .hero-main {
-    flex-direction: column-reverse;
-  }
-  .hero-right {
-    width: 95%;
-  }
-  #heroimg {
-    border-radius: 10px;
-    border: 2px solid black;
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: fill;
-  }
-  #learn-text {
-    font-size: clamp(1.2rem, 8.5vw, 4.5rem);
-  }
-  #student-text {
-    font-size: clamp(2.2rem, 8.5vw, 4.6rem);
-  }
-  .hero-left p {
-    font-size: clamp(0.5=7rem, 1vw, 2rem);
-  }
-  .hero-buttons {
-    flex-direction: column;
+    width: 50%;
+    display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .btn {
-    width: 100%;
-    font-size: clamp(1.2rem, 1.3vw, 1.1rem);
-    font-weight: 600;
-    border-radius: 8px;
-    padding: 0.7em;
-  }
-  .search-bar{
-    width: 100%;
-    margin-top: 1.5em;
-  }
-  .hero-left{
-    top: 0;
-  }
-  .hero-buttons{
-    margin-top: 1.5em;
-    gap: 1em;
-  }
 }
+
+
+#heroimg {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border: 8px solid white;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    transition: 0.3s ease;
+}
+
+
+#heroimg:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.16);
+}
+
+
+/*  HERO CONTENT  RIGHT */
+
+.hero-left {
+    width: 50%;
+}
+
+
+/* Welcome text */
+
+#learn-text {
+    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    font-weight: 700;
+    color: #111;
+}
+
+
+
+#student-text {
+    margin: 5px 0 25px;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    font-weight: 700;
+    color: #111;
+}
+
+
+
+
+#student-text span {
+    color: #0152dd;
+}
+
+
+/* Description */
+
+.hero-left p {
+    margin: 0;
+    max-width: 650px;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* Search bar */
+
+.search-bar {
+    width: 90%;
+    height: 58px;
+    margin-top: 30px;
+    display: flex;
+    align-items: stretch;
+    background-color: white;
+    border: 2px solid #0054e1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 84, 225, 0.12);
+    transition: 0.3s ease;
+}
+
+
+/* Search input */
+
+.search-bar input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    background-color: white;
+    font-size: 16px;
+    color: #222;
+}
+
+
+.search-bar input::placeholder {
+    color: #777;
+}
+
+
+
+.search-btn {
+    width: 58px;
+    flex-shrink: 0;
+    border: none;
+    background-color: #0054e1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+
+
+.search-btn i {
+    font-size: 25px;
+    color: white;
+}
+
+
+.search-btn:hover {
+    background-color: #003fa8;
+}
+
+
+.search-bar:focus-within {
+    box-shadow:
+        0 0 0 4px rgba(0, 84, 225, 0.12);
+}
+
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 32px;
+}
+
+
+.hero-buttons a {
+    text-decoration: none;
+}
+
+
+.btn {
+    width: 180px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.note-btn {
+    background-color: #0054e1;
+    color: white;
+    border: 2px solid #0054e1;
+}
+
+
+.note-btn:hover {
+    background-color: white;
+    color: #0054e1;
+    transform: translateY(-2px);
+}
+
+/* Upload note button */
+
+.browse-btn {
+    background-color: white;
+    color: #0054e1;
+    border: 2px solid #0054e1;
+}
+
+
+.browse-btn:hover {
+    background-color: #0054e1;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 992px) {
+
+    .hero {
+        min-height: auto;
+    }
+
+
+    .hero-main {
+        padding: 50px 5%;
+        gap: 40px;
+    }
+
+
+    .hero-right {
+        width: 48%;
+    }
+
+
+    .hero-left {
+        width: 52%;
+    }
+
+
+    #learn-text,
+    #student-text {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+    }
+
+
+    .hero-left p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+
+    .search-bar {
+        width: 100%;
+        height: 54px;
+    }
+
+
+    .search-btn {
+        width: 54px;
+    }
+
+
+    .search-btn i {
+        font-size: 23px;
+    }
+
+
+    .hero-buttons {
+        gap: 15px;
+    }
+
+
+    .btn {
+        width: 150px;
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: auto;
+    }
+
+
+    .hero-main {
+        width: 100%;
+        padding: 35px 5%;
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+
+    /* Image */
+
+    .hero-right {
+        width: 100%;
+        order: 1;
+    }
+
+
+    #heroimg {
+        width: 100%;
+        max-width: 600px;
+        border: 4px solid white;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+
+    /* Text */
+
+    .hero-left {
+        width: 100%;
+        order: 2;
+    }
+
+
+    #learn-text {
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.1;
+    }
+
+
+    #student-text {
+        font-size: clamp(2rem, 9vw, 3.2rem);
+        line-height: 1.1;
+        margin: 5px 0 15px;
+    }
+
+
+    .hero-left p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+
+    .hero-left p br {
+        display: none;
+    }
+
+
+    .search-bar {
+        width: 100%;
+        height: 52px;
+        margin-top: 25px;
+        border-radius: 8px;
+    }
+
+
+    .search-bar input {
+        padding: 0 14px;
+        font-size: 15px;
+    }
+
+
+    .search-btn {
+        width: 52px;
+    }
+
+
+    .search-btn i {
+        font-size: 22px;
+    }
+
+
+
+    .hero-buttons {
+        width: 100%;
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+
+    .hero-buttons a {
+        width: 100%;
+    }
+
+
+    .btn {
+        width: 100%;
+        padding: 13px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .hero-main {
+        padding: 25px 4%;
+        gap: 25px;
+    }
+
+
+    #learn-text {
+        font-size: 1.8rem;
+    }
+
+
+    #student-text {
+        font-size: 2rem;
+    }
+
+
+    .hero-left p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+
+    .search-bar {
+        height: 48px;
+        margin-top: 20px;
+    }
+
+
+    .search-bar input {
+        padding: 0 12px;
+        font-size: 14px;
+    }
+
+
+    .search-btn {
+        width: 48px;
+    }
+
+
+    .search-btn i {
+        font-size: 20px;
+    }
+
+
+    .hero-buttons {
+        margin-top: 20px;
+    }
+
+
+    .btn {
+        padding: 12px;
+        font-size: 15px;
+    }
+}
+
+
+
 
 
 /* categorie section css */
@@ -396,6 +648,7 @@
 .note-footer button img{
   width: 20px;
 }
+
 
 
 

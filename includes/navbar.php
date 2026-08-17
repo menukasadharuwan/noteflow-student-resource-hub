@@ -60,3 +60,5 @@ require_once __DIR__ . "/../auth/session.php";
         </div>
       </div>
     </header>
+
+    <script src="../js/script.js"></script>

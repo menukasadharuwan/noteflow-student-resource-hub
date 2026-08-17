@@ -1,3 +1,7 @@
+<?php require_once __DIR__ . "/../auth/session.php";  ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,29 +26,39 @@
 
             <h2>Change Details</h2>
 
+            <?php
+
+          if (isset($_GET["error"])) {
+            echo "<p id='php-error'>" . htmlspecialchars($_GET["error"]) . "</p>";
+            }
+          ?>
+          
             <div class="title-line"></div>
 
-            <form action="#" method="POST">
+            <form action="change_details.php" method="POST">
 
                 <div class="form-group">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter name"
+                            value="<?php echo htmlspecialchars($_SESSION["name"]) ?>"
+                        >
+                    </div>
                     <label for="username">Username</label>
                     <input
                         type="text"
                         id="username"
                         name="username"
                         placeholder="Enter username"
+                        value="<?php echo htmlspecialchars($_SESSION["username"]) ?>"
                     >
+                    <input type="hidden" name="action" value="edit">
                 </div>
 
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter name"
-                    >
-                </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -53,6 +67,7 @@
                         id="email"
                         name="email"
                         placeholder="Enter email"
+                        value="<?php echo htmlspecialchars($_SESSION["email"]) ?>"
                     >
                 </div>
 
@@ -78,5 +93,7 @@
 
 
     <?php require_once "footer.php"; ?>
+
+    
 </body>
 </html>
