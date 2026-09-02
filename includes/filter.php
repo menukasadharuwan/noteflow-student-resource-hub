@@ -3,8 +3,24 @@
 require_once "../auth/connect.php";
 require_once "../auth/session.php";
 
-// GET SUBJECTS
 
+// Get search from URL
+
+$searchFromUrl =
+    isset($_GET["search"])
+    ? trim($_GET["search"])
+    : "";
+
+
+// Get subject from URL
+
+$subjectFromUrl =
+    isset($_GET["subject"])
+    ? trim($_GET["subject"])
+    : "";
+
+
+// Get subjects
 
 $subjects = [];
 
@@ -19,21 +35,19 @@ if ($subjectQuery) {
 
     while ($row = mysqli_fetch_assoc($subjectQuery)) {
 
-        $subjects[] = $row["subject_name"];
+        $subjects[] =
+            $row["subject_name"];
 
     }
 
 }
 
 
-
-// GET ALL NOTES
-
+// Get all notes
 
 $notes = [];
 
 $sql = "
-
     SELECT
         n.pdf_id,
         n.user_id,
@@ -44,22 +58,16 @@ $sql = "
         n.date,
         n.image_path,
         u.username
-
     FROM notes n
-
     LEFT JOIN users u
         ON n.user_id = u.id
-
     ORDER BY n.date DESC
-
 ";
-
 
 $result = mysqli_query(
     $conn,
     $sql
 );
-
 
 if ($result) {
 
@@ -72,10 +80,8 @@ if ($result) {
 }
 
 
-// TOTAL NOTES
-
-
-$totalNotes = count($notes);
+$totalNotes =
+    count($notes);
 
 ?>
 
@@ -87,47 +93,55 @@ $totalNotes = count($notes);
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Notes Filter</title>
 
 
     <!-- CSS -->
 
-    <link rel="stylesheet" href="../css/filter.css">
+    <link
+        rel="stylesheet"
+        href="../css/filter.css"
+    >
 
-    <link rel="stylesheet" href="../css/navbar.css">
+    <link
+        rel="stylesheet"
+        href="../css/navbar.css"
+    >
 
-    <link rel="stylesheet" href="../css/footer.css">
+    <link
+        rel="stylesheet"
+        href="../css/footer.css"
+    >
 
 
     <!-- Font Awesome -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
 
 </head>
-
 
 <body>
 
 
-
-    <!-- NAVBAR -->
-
+    <!-- Navbar -->
 
     <?php require_once "navbar.php"; ?>
 
 
-
-    <!-- NOTES PAGE -->
-
+    <!-- Notes page -->
 
     <section class="notes-page">
 
 
-
-        <!-- BANNER -->
-
+        <!-- Banner -->
 
         <div class="banner">
 
@@ -153,17 +167,12 @@ $totalNotes = count($notes);
         </div>
 
 
-
-
-        <!-- MAIN CONTAINER -->
-
+        <!-- Main container -->
 
         <div class="main-container">
 
 
-
-            <!-- SIDEBAR -->
-
+            <!-- Sidebar -->
 
             <aside class="sidebar">
 
@@ -177,8 +186,7 @@ $totalNotes = count($notes);
                 </h3>
 
 
-
-                <!-- SEARCH -->
+                <!-- Search -->
 
                 <div class="input-group">
 
@@ -189,17 +197,25 @@ $totalNotes = count($notes);
 
                     <div class="search-box">
 
-                        <input type="text" id="searchInput" placeholder="Search notes...">
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search notes..."
+                            value="<?= htmlspecialchars(
+                                $searchFromUrl
+                            ) ?>"
+                        >
 
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i
+                            class="fa-solid fa-magnifying-glass"
+                        ></i>
 
                     </div>
 
                 </div>
 
 
-
-                <!-- SUBJECT -->
+                <!-- Subject -->
 
                 <div class="input-group">
 
@@ -211,27 +227,39 @@ $totalNotes = count($notes);
                     <select id="subjectFilter">
 
                         <option value="all">
+
                             All Subjects
+
                         </option>
 
 
                         <?php foreach ($subjects as $subject): ?>
 
-                        <option value="<?= htmlspecialchars($subject) ?>">
+                            <option
+                                value="<?= htmlspecialchars(
+                                    $subject
+                                ) ?>"
 
-                            <?= htmlspecialchars($subject) ?>
+                                <?= $subjectFromUrl === $subject
+                                    ? "selected"
+                                    : "" ?>
+                            >
 
-                        </option>
+                                <?= htmlspecialchars(
+                                    $subject
+                                ) ?>
+
+                            </option>
 
                         <?php endforeach; ?>
+
 
                     </select>
 
                 </div>
 
 
-
-                <!-- FILE TYPE -->
+                <!-- File type -->
 
                 <div class="input-group">
 
@@ -255,8 +283,7 @@ $totalNotes = count($notes);
                 </div>
 
 
-
-                <!-- SORT -->
+                <!-- Sort -->
 
                 <div class="input-group">
 
@@ -280,10 +307,13 @@ $totalNotes = count($notes);
                 </div>
 
 
+                <!-- Apply filters -->
 
-                <!-- APPLY -->
-
-                <button class="apply-btn" id="applyFilters" type="button">
+                <button
+                    class="apply-btn"
+                    id="applyFilters"
+                    type="button"
+                >
 
                     <i class="fa-solid fa-paper-plane"></i>
 
@@ -295,15 +325,12 @@ $totalNotes = count($notes);
             </aside>
 
 
-
-
-            <!-- CONTENT -->
-
+            <!-- Content -->
 
             <div class="content">
 
 
-                <!-- TOP BAR -->
+                <!-- Top bar -->
 
                 <div class="top-bar">
 
@@ -312,7 +339,7 @@ $totalNotes = count($notes);
                         Showing
 
                         <span id="count">
-                            <?= $totalNotes ?>
+                            0
                         </span>
 
                         Results
@@ -335,39 +362,38 @@ $totalNotes = count($notes);
                 </div>
 
 
-
-
-                <!-- NOTES CONTAINER -->
-
+                <!-- Notes -->
 
                 <div id="notesContainer">
 
 
                     <?php if (empty($notes)): ?>
 
-                    <div class="no-notes">
 
-                        <i class="fa-solid fa-file-circle-xmark"></i>
+                        <div class="no-notes">
 
-                        <h2>
-                            No Notes Available
-                        </h2>
+                            <i
+                                class="fa-solid fa-file-circle-xmark"
+                            ></i>
 
-                        <p>
-                            No students have uploaded notes yet.
-                        </p>
+                            <h2>
+                                No Notes Available
+                            </h2>
 
-                    </div>
+                            <p>
+                                No students have uploaded notes yet.
+                            </p>
+
+                        </div>
+
 
                     <?php else: ?>
 
 
-                    <?php foreach ($notes as $note): ?>
+                        <?php foreach ($notes as $note): ?>
 
 
-                    <?php
-
-                            // Username
+                            <?php
 
                             $username =
                                 !empty($note["username"])
@@ -375,21 +401,17 @@ $totalNotes = count($notes);
                                 : "Unknown User";
 
 
-                            // Description
-
                             $description =
                                 !empty($note["description"])
                                 ? $note["description"]
                                 : "No description available.";
 
 
-                            // Date
-
                             $noteDate =
-                                strtotime($note["date"]);
+                                strtotime(
+                                    $note["date"]
+                                );
 
-
-                            // File path
 
                             $filePath =
                                 "../" .
@@ -401,94 +423,118 @@ $totalNotes = count($notes);
                             ?>
 
 
-                    <!-- NOTE CARD -->
+                            <!-- Note card -->
 
-                    <div class="note-card" data-subject="<?= htmlspecialchars($note["subject"]) ?>"
-                        data-title="<?= htmlspecialchars(strtolower($note["title"])) ?>" data-type="PDF"
-                        data-date="<?= $noteDate ?>">
+                            <div
+                                class="note-card"
+
+                                data-title="<?= htmlspecialchars(
+                                    strtolower(
+                                        $note["title"]
+                                    )
+                                ) ?>"
+
+                                data-subject="<?= htmlspecialchars(
+                                    $note["subject"]
+                                ) ?>"
+
+                                data-type="PDF"
+
+                                data-date="<?= $noteDate ?>"
+                            >
 
 
-                        <!-- PDF IMAGE -->
+                                <!-- PDF image -->
 
-                        <img class="note-image" src="../images/notes-images/pdf.png" alt="PDF Note"
-                            onerror="this.src='../images/notes-images/operating-system.png'">
+                                <img
+                                    class="note-image"
+                                    src="../images/notes-images/pdf.png"
+                                    alt="PDF Note"
+
+                                    onerror="this.src='../images/notes-images/operating-system.png'"
+                                >
 
 
-                        <!-- NOTE INFO -->
+                                <!-- Note information -->
 
-                        <div class="note-info">
+                                <div class="note-info">
 
 
-                            <h2>
+                                    <h2>
 
-                                <?= htmlspecialchars(
+                                        <?= htmlspecialchars(
                                             $note["title"]
                                         ) ?>
 
-                            </h2>
+                                    </h2>
 
 
-                            <small>
+                                    <small>
 
-                                By
+                                        By
 
-                                <?= htmlspecialchars(
+                                        <?= htmlspecialchars(
                                             $username
                                         ) ?>
 
-                                • PDF •
+                                        • PDF •
 
-                                <?= date(
+                                        <?= date(
                                             "d M Y",
                                             $noteDate
                                         ) ?>
 
-                            </small>
+                                    </small>
 
 
-                            <p>
+                                    <p>
 
-                                <?= htmlspecialchars(
+                                        <?= htmlspecialchars(
                                             $description
                                         ) ?>
 
-                            </p>
+                                    </p>
 
 
-                            <span class="note-subject">
+                                    <span class="note-subject">
 
-                                <?= htmlspecialchars(
+                                        <?= htmlspecialchars(
                                             $note["subject"]
                                         ) ?>
 
-                            </span>
+                                    </span>
 
 
-                        </div>
+                                </div>
 
 
+                                <!-- Download -->
 
-                        <!-- DOWNLOAD -->
+                                <div class="card-actions">
 
-                        <div class="card-actions">
+                                    <a
+                                        href="<?= htmlspecialchars(
+                                            $filePath
+                                        ) ?>"
+                                        download
+                                        class="download-btn"
+                                    >
+
+                                        <i
+                                            class="fa-solid fa-download"
+                                        ></i>
+
+                                        Download
+
+                                    </a>
+
+                                </div>
 
 
-                            <a href="<?= htmlspecialchars($filePath) ?>" download class="download-btn">
-
-                                <i class="fa-solid fa-download"></i>
-
-                                Download
-
-                            </a>
+                            </div>
 
 
-                        </div>
-
-
-                    </div>
-
-
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
 
 
                     <?php endif; ?>
@@ -497,14 +543,17 @@ $totalNotes = count($notes);
                 </div>
 
 
+                <!-- No filter results -->
 
+                <div
+                    id="noResults"
+                    class="no-notes"
+                    style="display: none;"
+                >
 
-                <!-- NO FILTER RESULTS -->
-
-
-                <div id="noResults" class="no-notes" style="display: none;">
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i
+                        class="fa-solid fa-magnifying-glass"
+                    ></i>
 
                     <h2>
                         No Results Found
@@ -517,14 +566,12 @@ $totalNotes = count($notes);
                 </div>
 
 
+                <!-- Pagination -->
 
-
-                <!-- PAGINATION -->
-
-
-                <div class="pagination" id="pagination">
-
-                </div>
+                <div
+                    class="pagination"
+                    id="pagination"
+                ></div>
 
 
             </div>
@@ -534,20 +581,14 @@ $totalNotes = count($notes);
     </section>
 
 
-
-
-    <!-- FOOTER -->
-
+    <!-- Footer -->
 
     <?php require_once "footer.php"; ?>
 
 
-
-    <!-- JAVASCRIPT -->
-
+    <!-- JavaScript -->
 
     <script src="../js/filter.js"></script>
-
 
 </body>
 
