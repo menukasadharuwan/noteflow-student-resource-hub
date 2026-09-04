@@ -1,87 +1,132 @@
-# 📚 NoteFlow
+# 📚 NoteFlow - Student Resource Hub
 
-> A modern student resource hub for sharing and downloading study notes.
+NoteFlow is a web-based Student Resource Hub designed to help students easily
+upload, find, filter, and download educational notes and study materials.
 
-![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5)
-![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript)
-![Responsive](https://img.shields.io/badge/Responsive-Yes-success)
+The system provides a simple and user-friendly platform where students can
+share academic resources and access useful study materials in one place.
 
-## 📖 Overview
+---
 
-**NoteFlow** is a responsive web application designed to help students upload, discover, and download educational notes easily. The project provides a clean and user-friendly interface that improves access to study materials.
+## 📖 About the Project
 
-The website is built using **HTML**, **CSS**, and **JavaScript**, making it lightweight, fast, and responsive across desktop, tablet, and mobile devices.
+NoteFlow was developed as an ICT1209 Web Technologies Mini Project.
+
+The main purpose of this project is to create a centralized platform for
+students to manage and share educational notes.
+
+Students can create an account, upload notes, search for resources, filter
+notes by subject, download PDF files, manage their profiles, and contact the
+website administrators.
 
 ---
 
 ## ✨ Features
 
-- 🏠 Modern Home Page
-- 📤 Upload Notes
-- 🔍 Filter & Search Notes
-- 📥 Download Notes
-- 👤 About Page
-- 📞 Contact Page
-- 📱 Fully Responsive Design
-- 🎨 Clean and Modern UI
-- ⚡ Fast Loading
-- 💻 Cross-Browser Compatible
+### 🏠 Home Page
 
----
+- Modern and responsive landing page
+- Search notes
+- Explore notes
+- Upload notes
+- Browse notes by category
+- Recently added notes
 
-## 📂 Project Structure
+### 👤 User Authentication
 
-```
-NoteFlow/
-│
-├── css/
-│   ├── style.css
-│   ├── navbar.css
-│   ├── footer.css
-│   ├── upload.css
-│   ├── filter.css
-│   ├── About.css
-│   └── contact.css
-│
-├── js/
-│   ├── script.js
-│   ├── upload.js
-│   └── filter.js
-│
-├── includes/
-│   ├── About.html
-│   ├── contact.html
-│   ├── filter.html
-│   └── upload.html
-│
-├── images/
-│
-├── index.html
-│
-└── README.md
-```
+- User registration
+- User login
+- Secure password hashing
+- Session-based authentication
+- User logout
+- Profile management
 
----
+### 📚 Notes Management
 
-## 🛠 Technologies Used
+- Upload study notes
+- Add note title
+- Select subject
+- Add description
+- Add tags
+- Store uploaded files
+- View available notes
+- Download notes
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- Bootstrap Icons
-- Google Fonts
+### 🔍 Search and Filtering
 
----
+- Search for notes
+- Filter notes by subject
+- Browse different academic categories
+- Find recently added notes
 
-## 📱 Responsive Design
+### 📞 Contact System
 
-The website is optimized for:
+- Contact form
+- User name
+- Email address
+- Subject
+- Message
+- Messages stored in MySQL database
+
+### 📱 Responsive Design
+
+The website is designed to work on:
 
 - 💻 Desktop
+- 💻 Laptop
 - 📱 Mobile
 - 📟 Tablet
 
 ---
 
-⭐ If you like this project, don't forget to give it a **Star** on GitHub!
+## 📂 Project Structure
+
+```text
+NoteFlow/
+│
+├── auth/
+│   ├── connect.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── session.php
+│   └── signup.php
+│
+├── css/
+│   ├── About.css
+│   ├── Signup.css
+│   ├── contact.css
+│   ├── edit.css
+│   ├── filter.css
+│   ├── footer.css
+│   ├── log in.css
+│   ├── navbar.css
+│   ├── profile.css
+│   ├── style.css
+│   └── upload.css
+│
+├── images/
+│   ├── background.png
+│   ├── heroimage.jpg
+│   └── other website images
+│
+├── includes/
+│   ├── About.php
+│   ├── change_details.php
+│   ├── contact.php
+│   ├── edit.php
+│   ├── filter.php
+│   ├── footer.php
+│   ├── navbar.php
+│   ├── profile.php
+│   ├── upload.php
+│   └── uploadlogic.php
+│
+├── js/
+│   ├── filter.js
+│   ├── profile.js
+│   ├── script.js
+│   └── upload.js
+│
+├── index.php
+│
+└── README.md
