@@ -128,30 +128,18 @@ mysqli_stmt_close(
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         My Profile - NoteFlow
     </title>
 
 
-    <link
-        rel="stylesheet"
-        href="../css/profile.css"
-    >
+    <link rel="stylesheet" href="../css/profile.css">
 
-    <link
-        rel="stylesheet"
-        href="../css/navbar.css"
-    >
+    <link rel="stylesheet" href="../css/navbar.css">
 
-    <link
-        rel="stylesheet"
-        href="../css/footer.css"
-    >
+    <link rel="stylesheet" href="../css/footer.css">
 
 </head>
 
@@ -175,10 +163,7 @@ mysqli_stmt_close(
 
                 <div class="profile-picture">
 
-                    <img
-                        src="../images/profile.jpg"
-                        alt="Profile Picture"
-                    >
+                    <img src="../images/profile.jpg" alt="Profile Picture">
 
                 </div>
 
@@ -346,19 +331,12 @@ mysqli_stmt_close(
 
                     <div class="profile-button">
 
-                        <a
-                            href="edit.php"
-                            id="edit-button"
-                        >
+                        <a href="edit.php" id="edit-button">
                             EDIT
                         </a>
 
 
-                        <a
-                            href="/Noteflow/auth/logout.php"
-                            class="logout-btn"
-                            id="logout-btn"
-                        >
+                        <a href="/Noteflow/auth/logout.php" class="logout-btn" id="logout-btn">
 
                             <span>
                                 ↪
@@ -405,40 +383,37 @@ mysqli_stmt_close(
                     <?php if (empty($userNotes)): ?>
 
 
-                        <div class="no-uploaded-notes">
+                    <div class="no-uploaded-notes">
 
-                            <div class="empty-icon">
-                                📄
-                            </div>
-
-                            <h3>
-                                No Notes Uploaded
-                            </h3>
-
-                            <p>
-                                You have not uploaded any notes yet.
-                            </p>
-
-                            <a
-                                href="upload.php"
-                                class="upload-note-btn"
-                            >
-                                Upload Note
-                            </a>
-
+                        <div class="empty-icon">
+                            📄
                         </div>
+
+                        <h3>
+                            No Notes Uploaded
+                        </h3>
+
+                        <p>
+                            You have not uploaded any notes yet.
+                        </p>
+
+                        <a href="upload.php" class="upload-note-btn">
+                            Upload Note
+                        </a>
+
+                    </div>
 
 
                     <?php else: ?>
 
 
-                        <div class="uploaded-notes-list">
+                    <div class="uploaded-notes-list">
 
 
-                            <?php foreach ($userNotes as $note): ?>
+                        <?php foreach ($userNotes as $note): ?>
 
 
-                                <?php
+                        <?php
 
                                 $noteDate =
                                     strtotime(
@@ -456,140 +431,125 @@ mysqli_stmt_close(
                                 ?>
 
 
-                                <div class="uploaded-note-card">
+                        <div class="uploaded-note-card">
 
 
-                                    <div class="uploaded-pdf-icon">
+                            <div class="uploaded-pdf-icon">
 
-                                        <span>
-                                            PDF
-                                        </span>
+                                <span>
+                                    PDF
+                                </span>
 
-                                    </div>
+                            </div>
 
 
-                                    <div class="uploaded-note-info">
+                            <div class="uploaded-note-info">
 
-                                        <h3>
+                                <h3>
 
-                                            <?= htmlspecialchars(
+                                    <?= htmlspecialchars(
                                                 $note["title"]
                                             ) ?>
 
-                                        </h3>
+                                </h3>
 
 
-                                        <div class="uploaded-note-details">
+                                <div class="uploaded-note-details">
 
-                                            <span>
+                                    <span>
 
-                                                <?= htmlspecialchars(
+                                        <?= htmlspecialchars(
                                                     $note["subject"]
                                                 ) ?>
 
-                                            </span>
+                                    </span>
 
 
-                                            <span>
-                                                •
-                                            </span>
+                                    <span>
+                                        •
+                                    </span>
 
 
-                                            <span>
+                                    <span>
 
-                                                <?= date(
+                                        <?= date(
                                                     "d M Y",
                                                     $noteDate
                                                 ) ?>
 
-                                            </span>
+                                    </span>
 
-                                        </div>
+                                </div>
 
 
-                                        <?php if (
+                                <?php if (
                                             !empty(
                                                 $note["description"]
                                             )
                                         ): ?>
 
-                                            <p>
+                                <p>
 
-                                                <?= htmlspecialchars(
+                                    <?= htmlspecialchars(
                                                     $note["description"]
                                                 ) ?>
 
-                                            </p>
+                                </p>
 
-                                        <?php endif; ?>
-
-
-                                    </div>
+                                <?php endif; ?>
 
 
-                                    <div class="uploaded-note-actions">
+                            </div>
 
 
-                                        <!-- Download -->
+                            <div class="uploaded-note-actions">
 
-                                        <a
-                                            href="<?= htmlspecialchars(
+
+                                <!-- Download -->
+
+                                <a href="<?= htmlspecialchars(
                                                 $filePath
-                                            ) ?>"
-                                            class="note-download-btn"
-                                            download
-                                        >
+                                            ) ?>" class="note-download-btn" download>
 
-                                            <span>
-                                                ↓
-                                            </span>
+                                    <span>
+                                        ↓
+                                    </span>
 
-                                            Download
+                                    Download
 
-                                        </a>
+                                </a>
 
 
-                                        <!-- Delete -->
+                                <!-- Delete -->
 
-                                        <form
-                                            method="POST"
-                                            class="delete-note-form"
-                                        >
+                                <form method="POST" class="delete-note-form">
 
-                                            <input
-                                                type="hidden"
-                                                name="pdf_id"
-                                                value="<?= (int)$note["pdf_id"] ?>"
-                                            >
+                                    <input type="hidden" name="pdf_id" value="<?= (int)$note["pdf_id"] ?>">
 
 
-                                            <button
-                                                type="submit"
-                                                name="delete_note"
-                                                class="note-delete-btn"
-                                            >
+                                    <button type="submit" name="delete_note" class="note-delete-btn">
 
-                                                <span>
-                                                    🗑
-                                                </span>
+                                        <span>
+                                            🗑
+                                        </span>
 
-                                                Delete
+                                        Delete
 
-                                            </button>
+                                    </button>
 
-                                        </form>
+                                </form>
 
 
-                                    </div>
-
-
-                                </div>
-
-
-                            <?php endforeach; ?>
+                            </div>
 
 
                         </div>
+
+
+                        <?php endforeach; ?>
+
+
+                    </div>
 
 
                     <?php endif; ?>

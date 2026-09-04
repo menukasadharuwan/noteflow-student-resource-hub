@@ -70,36 +70,21 @@ if ($result) {
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Upload Notes</title>
 
 
     <!-- Bootstrap Icons -->
 
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 
-    <link
-        rel="stylesheet"
-        href="../css/upload.css"
-    >
+    <link rel="stylesheet" href="../css/upload.css">
 
-    <link
-        rel="stylesheet"
-        href="../css/navbar.css"
-    >
+    <link rel="stylesheet" href="../css/navbar.css">
 
-    <link
-        rel="stylesheet"
-        href="../css/footer.css"
-    >
+    <link rel="stylesheet" href="../css/footer.css">
 
 </head>
 
@@ -180,11 +165,7 @@ if ($result) {
                     </label>
 
 
-                    <input
-                        type="text"
-                        id="title"
-                        placeholder="Enter a descriptive title for your note"
-                    >
+                    <input type="text" id="title" placeholder="Enter a descriptive title for your note">
 
                 </div>
 
@@ -215,13 +196,11 @@ if ($result) {
 
                             <?php foreach ($subjects as $subject): ?>
 
-                                <option
-                                    value="<?= htmlspecialchars($subject["subject_name"]) ?>"
-                                >
+                            <option value="<?= htmlspecialchars($subject["subject_name"]) ?>">
 
-                                    <?= htmlspecialchars($subject["subject_name"]) ?>
+                                <?= htmlspecialchars($subject["subject_name"]) ?>
 
-                                </option>
+                            </option>
 
                             <?php endforeach; ?>
 
@@ -233,12 +212,8 @@ if ($result) {
                         </select>
 
 
-                        <input
-                            type="text"
-                            id="newSubject"
-                            placeholder="Enter new subject"
-                            style="display: none; margin-top: 10px;"
-                        >
+                        <input type="text" id="newSubject" placeholder="Enter new subject"
+                            style="display: none; margin-top: 10px;">
 
                     </div>
 
@@ -283,11 +258,8 @@ if ($result) {
                     </label>
 
 
-                    <textarea
-                        id="description"
-                        rows="4"
-                        placeholder="Provide a short description about this note (optional)"
-                    ></textarea>
+                    <textarea id="description" rows="4"
+                        placeholder="Provide a short description about this note (optional)"></textarea>
 
                 </div>
 
@@ -305,23 +277,13 @@ if ($result) {
 
 
 
-                <div
-                    class="upload-box"
-                    id="dropArea"
-                >
+                <div class="upload-box" id="dropArea">
 
 
-                    <input
-                        type="file"
-                        id="fileInput"
-                        hidden
-                        accept=".pdf,application/pdf"
-                    >
+                    <input type="file" id="fileInput" hidden accept=".pdf,application/pdf">
 
 
-                    <i
-                        class="bi bi-cloud-arrow-up-fill upload-icon"
-                    ></i>
+                    <i class="bi bi-cloud-arrow-up-fill upload-icon"></i>
 
 
                     <h4>
@@ -334,11 +296,7 @@ if ($result) {
                     </p>
 
 
-                    <button
-                        type="button"
-                        id="browseBtn"
-                        class="browse-btn"
-                    >
+                    <button type="button" id="browseBtn" class="browse-btn">
 
                         Browse File
 
@@ -366,11 +324,7 @@ if ($result) {
                     </label>
 
 
-                    <input
-                        type="text"
-                        id="tags"
-                        placeholder="Enter tags separated by commas"
-                    >
+                    <input type="text" id="tags" placeholder="Enter tags separated by commas">
 
                 </div>
 
@@ -381,11 +335,7 @@ if ($result) {
                 <div class="button-group">
 
 
-                    <button
-                        type="button"
-                        class="cancel-btn"
-                        id="cancelBtn"
-                    >
+                    <button type="button" class="cancel-btn" id="cancelBtn">
 
                         Cancel
 
@@ -393,11 +343,7 @@ if ($result) {
 
 
 
-                    <button
-                        type="button"
-                        class="upload-btn"
-                        id="uploadBtn"
-                    >
+                    <button type="button" class="upload-btn" id="uploadBtn">
 
                         <i class="bi bi-cloud-arrow-up"></i>
 

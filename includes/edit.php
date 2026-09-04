@@ -18,7 +18,7 @@
 
 <body>
 
-<?php require_once("navbar.php") ?>
+    <?php require_once("navbar.php") ?>
 
     <div class="edit-page">
 
@@ -26,9 +26,9 @@
 
             <h2>Change Details</h2>
 
-          
+
             <div class="title-line"></div>
-            
+
             <?php
 
           if (isset($_GET["error"])) {
@@ -41,45 +41,25 @@
                 <div class="form-group">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter name"
-                            value="<?php echo htmlspecialchars($_SESSION["name"]) ?>"
-                        >
+                        <input type="text" id="name" name="name" placeholder="Enter name"
+                            value="<?php echo htmlspecialchars($_SESSION["name"]) ?>">
                     </div>
                     <label for="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="Enter username"
-                        value="<?php echo htmlspecialchars($_SESSION["username"]) ?>"
-                    >
+                    <input type="text" id="username" name="username" placeholder="Enter username"
+                        value="<?php echo htmlspecialchars($_SESSION["username"]) ?>">
                     <input type="hidden" name="action" value="edit">
                 </div>
 
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter email"
-                        value="<?php echo htmlspecialchars($_SESSION["email"]) ?>"
-                    >
+                    <input type="email" id="email" name="email" placeholder="Enter email"
+                        value="<?php echo htmlspecialchars($_SESSION["email"]) ?>">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="Enter password"
-                    >
+                    <input type="password" id="password" name="password" placeholder="Enter password">
                 </div>
 
                 <button type="submit">
@@ -95,6 +75,7 @@
 
     <?php require_once "footer.php"; ?>
 
-    
+
 </body>
+
 </html>
