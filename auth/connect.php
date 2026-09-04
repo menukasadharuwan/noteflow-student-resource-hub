@@ -6,7 +6,7 @@ $password = "";
 $database = "noteflow";
 
 
-// Connect to MySQL
+/* Connect to MySQL */
 
 $conn = mysqli_connect(
     $host,
@@ -25,7 +25,7 @@ if (!$conn) {
 }
 
 
-// Create database if it does not exist
+/* Create database */
 
 $sql = "CREATE DATABASE IF NOT EXISTS `$database`";
 
@@ -39,7 +39,7 @@ if (!mysqli_query($conn, $sql)) {
 }
 
 
-// Select database
+/* Select database */
 
 mysqli_select_db(
     $conn,
@@ -47,7 +47,7 @@ mysqli_select_db(
 );
 
 
-// Set character encoding
+/* Set character encoding */
 
 mysqli_set_charset(
     $conn,
@@ -55,7 +55,7 @@ mysqli_set_charset(
 );
 
 
-// Create users table
+/* Create users table */
 
 $sql = "
 
@@ -75,7 +75,6 @@ CREATE TABLE IF NOT EXISTS users (
 
 ";
 
-
 if (!mysqli_query($conn, $sql)) {
 
     die(
@@ -86,7 +85,7 @@ if (!mysqli_query($conn, $sql)) {
 }
 
 
-// Create subjects table
+/* Create subjects table */
 
 $sql = "
 
@@ -100,7 +99,6 @@ CREATE TABLE IF NOT EXISTS subjects (
 
 ";
 
-
 if (!mysqli_query($conn, $sql)) {
 
     die(
@@ -111,7 +109,7 @@ if (!mysqli_query($conn, $sql)) {
 }
 
 
-// Insert default subjects
+/* Insert default subjects */
 
 $subjects = [
 
@@ -132,23 +130,20 @@ foreach ($subjects as $subject) {
          VALUES (?)"
     );
 
-
     mysqli_stmt_bind_param(
         $stmt,
         "s",
         $subject
     );
 
-
     mysqli_stmt_execute($stmt);
-
 
     mysqli_stmt_close($stmt);
 
 }
 
 
-// Create notes table
+/* Create notes table */
 
 $sql = "
 
@@ -178,11 +173,42 @@ CREATE TABLE IF NOT EXISTS notes (
 
 ";
 
-
 if (!mysqli_query($conn, $sql)) {
 
     die(
         "Notes table error: " .
+        mysqli_error($conn)
+    );
+
+}
+
+
+/* Create messages table */
+
+$sql = "
+
+CREATE TABLE IF NOT EXISTS messages (
+
+    id INT AUTO_INCREMENT PRIMARY KEY,
+
+    name VARCHAR(100) NOT NULL,
+
+    email VARCHAR(150) NOT NULL,
+
+    subject VARCHAR(255) NOT NULL,
+
+    message TEXT NOT NULL,
+
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+
+)
+
+";
+
+if (!mysqli_query($conn, $sql)) {
+
+    die(
+        "Messages table error: " .
         mysqli_error($conn)
     );
 

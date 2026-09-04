@@ -1,141 +1,351 @@
 <?php
 
-//Session start
-session_start();
+/* Start session */
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+
+/* Database connection */
+
 require_once "connect.php";
 
-//Check If requests is POST
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $action = $_POST["action"];
 
-    //Register form
-    if($action == "register"){
-        $name = $_POST["name"];
-        $username = $_POST["username"];
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $repassword = $_POST["repassword"];
+/* Handle POST requests */
 
-        //check email alredy exits
-        $sql = "SELECT id FROM users WHERE email ='$email' ";
-        $result = $conn->query($sql);
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-        if($result->num_rows > 0){
-            //echo "Email alredy exits";
-            header("Location: signup.php?error=Email already exists.Try another email.");
+    $action = $_POST["action"] ?? "";
+
+
+    /* Register */
+
+    if ($action === "register") {
+
+        $name = trim($_POST["name"] ?? "");
+
+        $username = trim($_POST["username"] ?? "");
+
+        $email = trim($_POST["email"] ?? "");
+
+        $password = $_POST["password"] ?? "";
+
+        $repassword = $_POST["repassword"] ?? "";
+
+
+        /* Check required fields */
+
+        if (
+            empty($name) ||
+            empty($username) ||
+            empty($email) ||
+            empty($password) ||
+            empty($repassword)
+        ) {
+
+            header(
+                "Location: signup.php?error=Please fill in all fields."
+            );
+
             exit();
-        }else{
-
-            $username_check = "SELECT id FROM users WHERE username = '$username' ";
-            $result2 = $conn->query($username_check);
-
-            if(!$result2->num_rows > 0){
-
-                if(!empty($password)){
-                    if($password == $repassword){
-
-                    //password hash
-                    $hash_password = password_hash($password, PASSWORD_DEFAULT);
-
-                    $sql2 = "INSERT INTO users (username,email,password,name) VALUES(?,?,?,?)";
-
-                    $save_data = $conn->prepare($sql2);
-                    $save_data->bind_param("ssss",$username,$email,$hash_password,$name);
-
-                    if($save_data->execute()){
-                    // echo "user add successfull";
-
-                    header("Location: login.php");
-                        exit();
-                    }else{
-                        //echo "Fail to create account";
-                        header("Location: ../index.php?Fail to create account.Try agan");
-                        exit();
-                    }
-                
-
-                    }else{
-                    //echo "not same";
-                    header("Location: signup.php?error=your password does not match.Try agan.");
-                    exit();
-                }
-                }else{
-                    //echo "password not";
-                    header("Location: signup.php?error=Password is empty! Try agan");
-                    exit();
-                }
-            }else{
-               // echo "username alredy exits.";
-               header("Location: signup.php?error=Username alredy exits.Try another username.");
-               exit();
-            }
-        }
-        
-    }
-
-
-
-    //login page backend
-
-    if($action == "login"){
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-
-        if(empty($password)){
-            header("Location: login.php?error=Password is empty.Enter password");
-            exit();
-        }else{
-            $sql = "SELECT id,username,email,password,name FROM users WHERE email= ?";
-
-            $connect = $conn->prepare($sql);
-            $connect->bind_param("s",$email);
-            $connect->execute();
-
-            $result = $connect->get_result();
-
-            
-            if($result->num_rows > 0){
-                $user = $result->fetch_assoc();
-
-                //check password
-                if(password_verify($password,$user["password"])){
-                    //login success
-
-                    //session_start();
-                    $_SESSION["user_id"] = $user["id"];
-                    $_SESSION["username"] = $user["username"];
-                    $_SESSION["email"] = $user["email"];
-                    $_SESSION["name"] = $user["name"];
-
-                    header("Location: ../index.php");
-                    exit();
-                }else{
-                    header("Location: login.php?error=Wrong Password");
-                    exit();
-                }
-            }else{
-                header("Location: login.php?error=User not found");
-            }
-
 
         }
+
+
+        /* Check email */
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+            header(
+                "Location: signup.php?error=Please enter a valid email."
+            );
+
+            exit();
+
+        }
+
+
+        /* Check if email already exists */
+
+        $sql = "SELECT id FROM users WHERE email = ?";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bind_param(
+            "s",
+            $email
+        );
+
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $stmt->close();
+
+
+        if ($result->num_rows > 0) {
+
+            header(
+                "Location: signup.php?error=Email already exists. Try another email."
+            );
+
+            exit();
+
+        }
+
+
+        /* Check username */
+
+        $sql = "SELECT id FROM users WHERE username = ?";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bind_param(
+            "s",
+            $username
+        );
+
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        $stmt->close();
+
+
+        if ($result->num_rows > 0) {
+
+            header(
+                "Location: signup.php?error=Username already exists. Try another username."
+            );
+
+            exit();
+
+        }
+
+
+        /* Check password */
+
+        if (empty($password)) {
+
+            header(
+                "Location: signup.php?error=Password is empty. Try again."
+            );
+
+            exit();
+
+        }
+
+
+        /* Check password match */
+
+        if ($password !== $repassword) {
+
+            header(
+                "Location: signup.php?error=Your password does not match. Try again."
+            );
+
+            exit();
+
+        }
+
+
+        /* Hash password */
+
+        $hash_password = password_hash(
+            $password,
+            PASSWORD_DEFAULT
+        );
+
+
+        /* Insert user */
+
+        $sql = "
+            INSERT INTO users
+            (
+                username,
+                email,
+                password,
+                name
+            )
+            VALUES
+            (?, ?, ?, ?)
+        ";
+
+
+        $save_data = $conn->prepare($sql);
+
+        $save_data->bind_param(
+            "ssss",
+            $username,
+            $email,
+            $hash_password,
+            $name
+        );
+
+
+        if ($save_data->execute()) {
+
+            $save_data->close();
+
+            header(
+                "Location: login.php"
+            );
+
+            exit();
+
+        } else {
+
+            $save_data->close();
+
+            header(
+                "Location: ../index.php?error=Failed to create account. Try again."
+            );
+
+            exit();
+
+        }
+
     }
-    
+
+
+    /* Login */
+
+    if ($action === "login") {
+
+        $email = trim($_POST["email"] ?? "");
+
+        $password = $_POST["password"] ?? "";
+
+
+        /* Check email */
+
+        if (empty($email)) {
+
+            header(
+                "Location: login.php?error=Email is empty. Enter your email."
+            );
+
+            exit();
+
+        }
+
+
+        /* Check password */
+
+        if (empty($password)) {
+
+            header(
+                "Location: login.php?error=Password is empty. Enter password."
+            );
+
+            exit();
+
+        }
+
+
+        /* Find user */
+
+        $sql = "
+            SELECT
+                id,
+                username,
+                email,
+                password,
+                name
+            FROM users
+            WHERE email = ?
+        ";
+
+
+        $connect = $conn->prepare($sql);
+
+        $connect->bind_param(
+            "s",
+            $email
+        );
+
+        $connect->execute();
+
+
+        $result = $connect->get_result();
+
+
+        /* User found */
+
+        if ($result->num_rows > 0) {
+
+            $user = $result->fetch_assoc();
+
+
+            /* Check password */
+
+            if (
+                password_verify(
+                    $password,
+                    $user["password"]
+                )
+            ) {
+
+                /* Regenerate session ID */
+
+                session_regenerate_id(true);
+
+
+                /* Save user information */
+
+                $_SESSION["user_id"] =
+                    $user["id"];
+
+                $_SESSION["username"] =
+                    $user["username"];
+
+                $_SESSION["email"] =
+                    $user["email"];
+
+                $_SESSION["name"] =
+                    $user["name"];
+
+
+                $connect->close();
+
+
+                /* Login success */
+
+                header(
+                    "Location: ../index.php"
+                );
+
+                exit();
+
+            } else {
+
+                $connect->close();
+
+
+                header(
+                    "Location: login.php?error=Wrong password."
+                );
+
+                exit();
+
+            }
+
+        } else {
+
+            $connect->close();
+
+
+            header(
+                "Location: login.php?error=User not found."
+            );
+
+            exit();
+
+        }
+
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 ?>
