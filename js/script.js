@@ -16,14 +16,14 @@ if (nav_menu_icon && navbar_links) {
             navbar_links.style.display = "none";
 
             nav_menu_icon.src =
-                "../images/icons/menu.svg";
+                "/noteflow-student-resource-hub/images/icons/menu.svg";
 
         } else {
 
             navbar_links.style.display = "block";
 
             nav_menu_icon.src =
-                "../images/icons/Cansal.svg";
+                "/noteflow-student-resource-hub/images/icons/Cansal.svg";
 
             nav_menu_icon.style.width =
                 "35px";

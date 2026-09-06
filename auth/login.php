@@ -72,7 +72,7 @@ if(isset($_SESSION["user_id"])){
 
                     <div class="signup">
                         Don't have an account?
-                        <a href="signup.html">Sign Up for free</a>
+                        <a href="/noteflow-student-resource-hub/auth/signup.php">Sign Up for free</a>
                     </div>
                 </form>
             </div>

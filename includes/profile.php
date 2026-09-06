@@ -4,15 +4,12 @@ require_once __DIR__ . "/../auth/session.php";
 require_once __DIR__ . "/../auth/connect.php";
 
 // If user is not logged in
-
 if (!isset($_SESSION["user_id"])) {
 
     header("Location: /Noteflow/auth/login.php");
 
     exit();
-
 }
-
 
 $userId = $_SESSION["user_id"];
 
@@ -27,14 +24,12 @@ if (
     $pdfId =
         intval($_POST["pdf_id"]);
 
-
     $deleteQuery = mysqli_prepare(
         $conn,
         "DELETE FROM notes
          WHERE pdf_id = ?
          AND user_id = ?"
     );
-
 
     mysqli_stmt_bind_param(
         $deleteQuery,
@@ -43,30 +38,25 @@ if (
         $userId
     );
 
-
     mysqli_stmt_execute(
         $deleteQuery
     );
 
-
     mysqli_stmt_close(
         $deleteQuery
     );
-
 
     header(
         "Location: profile.php"
     );
 
     exit();
-
 }
 
 
 // Get user's uploaded notes
 
 $userNotes = [];
-
 
 $notesQuery = mysqli_prepare(
     $conn,
@@ -82,24 +72,20 @@ $notesQuery = mysqli_prepare(
      ORDER BY date DESC"
 );
 
-
 mysqli_stmt_bind_param(
     $notesQuery,
     "i",
     $userId
 );
 
-
 mysqli_stmt_execute(
     $notesQuery
 );
-
 
 $notesResult =
     mysqli_stmt_get_result(
         $notesQuery
     );
-
 
 while (
     $row =
@@ -110,9 +96,7 @@ while (
 
     $userNotes[] =
         $row;
-
 }
-
 
 mysqli_stmt_close(
     $notesQuery
@@ -134,6 +118,11 @@ mysqli_stmt_close(
         My Profile - NoteFlow
     </title>
 
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
     <link rel="stylesheet" href="../css/profile.css">
 
@@ -142,7 +131,6 @@ mysqli_stmt_close(
     <link rel="stylesheet" href="../css/footer.css">
 
 </head>
-
 
 <body>
 
@@ -163,7 +151,10 @@ mysqli_stmt_close(
 
                 <div class="profile-picture">
 
-                    <img src="../images/profile.jpg" alt="Profile Picture">
+                    <img
+                        src="../images/profile.jpg"
+                        alt="Profile Picture"
+                    >
 
                 </div>
 
@@ -221,7 +212,7 @@ mysqli_stmt_close(
                     <div class="info-card">
 
                         <div class="info-icon">
-                            👤
+                            <i class="bi bi-person-fill"></i>
                         </div>
 
                         <div class="info-content">
@@ -252,7 +243,7 @@ mysqli_stmt_close(
                     <div class="info-card">
 
                         <div class="info-icon">
-                            @
+                            <i class="bi bi-at"></i>
                         </div>
 
                         <div class="info-content">
@@ -283,7 +274,7 @@ mysqli_stmt_close(
                     <div class="info-card email-card">
 
                         <div class="info-icon">
-                            ✉
+                            <i class="bi bi-envelope-fill"></i>
                         </div>
 
                         <div class="info-content">
@@ -331,15 +322,22 @@ mysqli_stmt_close(
 
                     <div class="profile-button">
 
-                        <a href="edit.php" id="edit-button">
+                        <a
+                            href="edit.php"
+                            id="edit-button"
+                        >
                             EDIT
                         </a>
 
 
-                        <a href="/Noteflow/auth/logout.php" class="logout-btn" id="logout-btn">
+                        <a
+                            href="/Noteflow/auth/logout.php"
+                            class="logout-btn"
+                            id="logout-btn"
+                        >
 
                             <span>
-                                ↪
+                                <i class="bi bi-box-arrow-right"></i>
                             </span>
 
                             Logout
@@ -386,7 +384,7 @@ mysqli_stmt_close(
                     <div class="no-uploaded-notes">
 
                         <div class="empty-icon">
-                            📄
+                            <i class="bi bi-file-earmark-text"></i>
                         </div>
 
                         <h3>
@@ -397,7 +395,10 @@ mysqli_stmt_close(
                             You have not uploaded any notes yet.
                         </p>
 
-                        <a href="upload.php" class="upload-note-btn">
+                        <a
+                            href="upload.php"
+                            class="upload-note-btn"
+                        >
                             Upload Note
                         </a>
 
@@ -415,20 +416,19 @@ mysqli_stmt_close(
 
                         <?php
 
-                                $noteDate =
-                                    strtotime(
-                                        $note["date"]
-                                    );
+                        $noteDate =
+                            strtotime(
+                                $note["date"]
+                            );
 
+                        $filePath =
+                            "../" .
+                            ltrim(
+                                $note["image_path"],
+                                "/"
+                            );
 
-                                $filePath =
-                                    "../" .
-                                    ltrim(
-                                        $note["image_path"],
-                                        "/"
-                                    );
-
-                                ?>
+                        ?>
 
 
                         <div class="uploaded-note-card">
@@ -448,8 +448,8 @@ mysqli_stmt_close(
                                 <h3>
 
                                     <?= htmlspecialchars(
-                                                $note["title"]
-                                            ) ?>
+                                        $note["title"]
+                                    ) ?>
 
                                 </h3>
 
@@ -459,8 +459,8 @@ mysqli_stmt_close(
                                     <span>
 
                                         <?= htmlspecialchars(
-                                                    $note["subject"]
-                                                ) ?>
+                                            $note["subject"]
+                                        ) ?>
 
                                     </span>
 
@@ -473,9 +473,9 @@ mysqli_stmt_close(
                                     <span>
 
                                         <?= date(
-                                                    "d M Y",
-                                                    $noteDate
-                                                ) ?>
+                                            "d M Y",
+                                            $noteDate
+                                        ) ?>
 
                                     </span>
 
@@ -483,16 +483,16 @@ mysqli_stmt_close(
 
 
                                 <?php if (
-                                            !empty(
-                                                $note["description"]
-                                            )
-                                        ): ?>
+                                    !empty(
+                                        $note["description"]
+                                    )
+                                ): ?>
 
                                 <p>
 
                                     <?= htmlspecialchars(
-                                                    $note["description"]
-                                                ) ?>
+                                        $note["description"]
+                                    ) ?>
 
                                 </p>
 
@@ -507,12 +507,16 @@ mysqli_stmt_close(
 
                                 <!-- Download -->
 
-                                <a href="<?= htmlspecialchars(
-                                                $filePath
-                                            ) ?>" class="note-download-btn" download>
+                                <a
+                                    href="<?= htmlspecialchars(
+                                        $filePath
+                                    ) ?>"
+                                    class="note-download-btn"
+                                    download
+                                >
 
                                     <span>
-                                        ↓
+                                        <i class="bi bi-download"></i>
                                     </span>
 
                                     Download
@@ -522,15 +526,26 @@ mysqli_stmt_close(
 
                                 <!-- Delete -->
 
-                                <form method="POST" class="delete-note-form">
+                                <form
+                                    method="POST"
+                                    class="delete-note-form"
+                                >
 
-                                    <input type="hidden" name="pdf_id" value="<?= (int)$note["pdf_id"] ?>">
+                                    <input
+                                        type="hidden"
+                                        name="pdf_id"
+                                        value="<?= (int)$note["pdf_id"] ?>"
+                                    >
 
 
-                                    <button type="submit" name="delete_note" class="note-delete-btn">
+                                    <button
+                                        type="submit"
+                                        name="delete_note"
+                                        class="note-delete-btn"
+                                    >
 
                                         <span>
-                                            🗑
+                                            <i class="bi bi-trash-fill"></i>
                                         </span>
 
                                         Delete

@@ -9,7 +9,7 @@ session_unset();
 session_destroy();
 
 // Go back to home page
-header("Location: ../index.php");
+header("Location: /noteflow-student-resource-hub/index.php");
 exit();
 
 ?>
