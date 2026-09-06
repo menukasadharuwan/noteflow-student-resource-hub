@@ -4,7 +4,7 @@ require_once __DIR__ . "/../auth/connect.php";
 
 // If user is not logged in
 if (!isset($_SESSION["user_id"])) {
-    header("Location: /Noteflow/auth/login.php");
+    header("Location: /noteflow-student-resource-hub/auth/login.php");
     exit();
 }
 
@@ -164,7 +164,7 @@ mysqli_stmt_close($notesQuery);
                 <div class="profile-button">
                     <a href="edit.php" id="edit-button">EDIT</a>
 
-                    <a href="/Noteflow/auth/logout.php" class="logout-btn" id="logout-btn">
+                    <a href="/noteflow-student-resource-hub/auth/logout.php" class="logout-btn" id="logout-btn">
                         <span><i class="bi bi-box-arrow-right"></i></span>
                         Logout
                     </a>

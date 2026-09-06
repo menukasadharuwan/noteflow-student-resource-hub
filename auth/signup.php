@@ -61,7 +61,7 @@
 
                 <p style="text-align:center;margin-top:20px;">
                     Already have an account?
-                    <a href="/noteflow-student-resource-hub/index.php/login.php">Sign In</a>
+                    <a href="/noteflow-student-resource-hub/auth/login.php">Sign In</a>
                 </p>
 
             </div>
