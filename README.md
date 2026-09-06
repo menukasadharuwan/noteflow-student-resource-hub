@@ -1,6 +1,6 @@
 # 📚 NoteFlow - Student Resource Hub
 
-**NoteFlow** is a web-based Student Resource Hub developed to help students easily **upload, find, search, filter, and download educational notes and study materials**.
+**NoteFlow** is a web-based Student Resource Hub designed to help students easily **upload, find, search, filter, and download educational notes and study materials**.
 
 The system provides a simple and user-friendly platform where students can share academic resources and access useful study materials in one centralized location.
 
@@ -12,8 +12,6 @@ The system provides a simple and user-friendly platform where students can share
 | ------------------ | ------------------------------- |
 | **Project Name**   | NoteFlow - Student Resource Hub |
 | **Project Type**   | Web Application                 |
-| **Module**         | ICT1209 - Web Technologies      |
-| **Project**        | Mini Project                    |
 | **Frontend**       | HTML5, CSS3, JavaScript         |
 | **Backend**        | PHP                             |
 | **Database**       | MySQL                           |
@@ -24,11 +22,9 @@ The system provides a simple and user-friendly platform where students can share
 
 ## 📖 About the Project
 
-NoteFlow was developed as an **ICT1209 Web Technologies Mini Project**.
+NoteFlow is a student-focused resource-sharing platform that provides a centralized location for managing and accessing educational materials.
 
-The main objective of the project is to create a centralized platform where students can manage and share educational resources.
-
-Students can:
+Users can:
 
 * Create an account
 * Log in securely
@@ -41,7 +37,7 @@ Students can:
 * Add descriptions and tags
 * Contact the website administrators
 
-The project focuses on providing a simple and responsive interface that can be accessed from desktop, laptop, tablet, and mobile devices.
+The website is designed with a responsive interface so that users can access the system from different devices.
 
 ---
 
@@ -353,7 +349,7 @@ The NoteFlow home page should now be displayed.
 
 NoteFlow uses PHP sessions to manage authenticated users.
 
-The authentication system includes:
+The authentication system follows this process:
 
 ```text
 Registration
@@ -454,85 +450,17 @@ The project includes several basic security practices:
 * Input validation
 * Restricted access to authenticated features
 
-> For production deployment, additional security measures such as stronger input sanitization, CSRF protection, secure file validation, MIME-type verification, and improved database query handling should also be implemented.
-
 ---
 
-# 🚀 Future Improvements
+# 👨‍💻 Created By
 
-The following features could be added in future versions:
+### K.M. Sadharuwan
 
-* ⭐ Favorite notes
-* ❤️ Like system
-* 💬 Comments and discussions
-* 🔔 Notifications
-* 📊 Admin dashboard
-* 👨‍💼 Advanced administrator controls
-* 📈 Resource statistics
-* 🏷️ Advanced tagging system
-* 🔎 Advanced search
-* 📄 More file format support
-* ☁️ Cloud storage
-* 🔐 Two-factor authentication
-* 🌙 Dark mode
-* 📱 Progressive Web App support
+**ITT/2024/094**
 
----
+### K.M.K.D Mudalige
 
-# 🐛 Known Limitations
-
-As this is an academic mini project, some advanced production-level features may not be included.
-
-Possible future improvements include:
-
-* More advanced security controls
-* Improved file upload validation
-* Advanced administration features
-* Cloud deployment
-* Automated backups
-* Larger-scale database optimization
-
----
-
-# 🎯 Project Objectives
-
-The main objectives of NoteFlow are:
-
-1. To create a centralized platform for educational resources.
-2. To allow students to upload and share study materials.
-3. To provide an easy way to search and filter notes.
-4. To implement user authentication.
-5. To provide a responsive web interface.
-6. To store application data using MySQL.
-7. To develop practical skills in PHP, MySQL, HTML, CSS, and JavaScript.
-
----
-
-# 👨‍💻 Developer
-
-**Menuka Sadharuwan**
-
-ICT Undergraduate Student
-
-Sri Lanka
-
----
-
-# 📜 Academic Project
-
-This project was developed as part of the:
-
-**ICT1209 - Web Technologies Mini Project**
-
-The project demonstrates practical implementation of:
-
-* Web development
-* Frontend design
-* Backend programming
-* Database management
-* User authentication
-* File management
-* Responsive web design
+**ITT/2024/70**
 
 ---
 
@@ -543,11 +471,3 @@ If you find this project useful, consider giving the repository a ⭐ on GitHub.
 **Repository:**
 
 https://github.com/menukasadharuwan/noteflow-student-resource-hub
-
----
-
-# 📄 License
-
-This project was created for educational and academic purposes.
-
-© 2026 Menuka Sadharuwan. All rights reserved.
