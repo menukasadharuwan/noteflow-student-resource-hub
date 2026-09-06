@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    $stmt->bind_param("ssssi", $username, $name, $email, $password, $id);
+    $stmt->bind_param("ssssi", $username, $name, $email, $hash_password, $id);
 
     if ($stmt->execute()) {
 
