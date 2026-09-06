@@ -10,17 +10,7 @@
                 <h3>STUDENT RESOURCE HUB</h3>
             </div>
 
-            <p>
-                A platform to access, share and discover quality
-                study materials easily.
-            </p>
-
-            <div class="social-icons">
-                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/facebook-rounded-border-svgrepo-com.svg" alt="facebook"></a>
-                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/twitter-rounded-border-svgrepo-com.svg" alt="twitter"></a>
-                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/instagram-svgrepo-com.svg" alt="instagram"></a>
-                <a href="#"><img src="/noteflow-student-resource-hub/images/footer-icons/youtube-svgrepo-com.svg" alt="youtube"></a>
-            </div>
+        
 
         </div>
 
@@ -28,36 +18,32 @@
         <div class="footer-col">
             <h3>QUICK LINKS</h3>
 
-            <a href="../index.php">Home</a>
+            <a href="/noteflow-student-resource-hub/index.php">Home</a>
             <a href="/noteflow-student-resource-hub/includes/filter.php">Notes</a>
             <a href="/noteflow-student-resource-hub/includes/About.php">About</a>
             <a href="/noteflow-student-resource-hub/includes/contact.php">Contact</a>
         </div>
 
-        <!-- Help -->
-        <div class="footer-col">
-            <h3>HELP</h3>
-
-            <a href="#">FAQs</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-        </div>
+   
 
         <!-- Contact -->
-        <div class="footer-col">
-            <h3>STAY CONNECTED</h3>
+        <!-- Contact -->
 
-            <div class="contact-item">
-                <img src="/noteflow-student-resource-hub/images/footer-icons/letter-svgrepo-com.svg" alt="">
-                <span>info@srhub.com</span>
-            </div>
+<div class="footer-col">
 
-            <div class="contact-item">
-                <img src="/noteflow-student-resource-hub/images/footer-icons/call-out-svgrepo-com.svg" alt="">
-                <span>+94 98765 43210</span>
-            </div>
+    <h3>STAY CONNECTED</h3>
 
-        </div>
+    <div class="contact-item">
+        <i class="bi bi-envelope"></i>
+        <span>Noteflow@srhub.com</span>
+    </div>
+
+    <div class="contact-item">
+        <i class="bi bi-telephone"></i>
+        <span>+94 1321391</span>
+    </div>
+
+</div>
 
     </div>
 

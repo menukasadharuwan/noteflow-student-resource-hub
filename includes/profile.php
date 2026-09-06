@@ -14,12 +14,40 @@ $userId = $_SESSION["user_id"];
 if (isset($_POST["delete_note"]) && isset($_POST["pdf_id"])) {
     $pdfId = intval($_POST["pdf_id"]);
 
-    $deleteQuery = mysqli_prepare($conn, "DELETE FROM notes WHERE pdf_id = ? AND user_id = ?");
+    // Get PDF path from database
+    $getFileQuery = mysqli_prepare($conn, "SELECT image_path FROM notes WHERE pdf_id = ? AND user_id = ?");
 
-    mysqli_stmt_bind_param($deleteQuery, "ii", $pdfId, $userId);
-    mysqli_stmt_execute($deleteQuery);
-    mysqli_stmt_close($deleteQuery);
+    if ($getFileQuery) {
+        mysqli_stmt_bind_param($getFileQuery, "ii", $pdfId, $userId);
+        mysqli_stmt_execute($getFileQuery);
 
+        $fileResult = mysqli_stmt_get_result($getFileQuery);
+        $note = mysqli_fetch_assoc($fileResult);
+
+        mysqli_stmt_close($getFileQuery);
+
+        // Check if note exists
+        if ($note) {
+            // Get actual PDF path
+            $filePath = __DIR__ . "/../" . ltrim($note["image_path"], "/");
+
+            // Delete PDF file
+            if (file_exists($filePath)) {
+                unlink($filePath);
+            }
+
+            // Delete note from database
+            $deleteQuery = mysqli_prepare($conn, "DELETE FROM notes WHERE pdf_id = ? AND user_id = ?");
+
+            if ($deleteQuery) {
+                mysqli_stmt_bind_param($deleteQuery, "ii", $pdfId, $userId);
+                mysqli_stmt_execute($deleteQuery);
+                mysqli_stmt_close($deleteQuery);
+            }
+        }
+    }
+
+    // Return to profile page
     header("Location: profile.php");
     exit();
 }
@@ -50,6 +78,7 @@ mysqli_stmt_close($notesQuery);
 
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -72,9 +101,7 @@ mysqli_stmt_close($notesQuery);
             <div class="profile-heading">
                 <span class="profile-label">MY PROFILE</span>
 
-                <h1>
-                    <?php echo htmlspecialchars($_SESSION["name"]); ?>
-                </h1>
+                <h1><?php echo htmlspecialchars($_SESSION["name"]); ?></h1>
 
                 <p>Manage your personal account information.</p>
             </div>
@@ -97,10 +124,7 @@ mysqli_stmt_close($notesQuery);
 
                     <div class="info-content">
                         <span>Full Name</span>
-
-                        <h3>
-                            <?php echo htmlspecialchars($_SESSION["name"]); ?>
-                        </h3>
+                        <h3><?php echo htmlspecialchars($_SESSION["name"]); ?></h3>
                     </div>
                 </div>
 
@@ -112,10 +136,7 @@ mysqli_stmt_close($notesQuery);
 
                     <div class="info-content">
                         <span>Username</span>
-
-                        <h3>
-                            <?php echo htmlspecialchars($_SESSION["username"]); ?>
-                        </h3>
+                        <h3><?php echo htmlspecialchars($_SESSION["username"]); ?></h3>
                     </div>
                 </div>
 
@@ -127,10 +148,7 @@ mysqli_stmt_close($notesQuery);
 
                     <div class="info-content">
                         <span>Email Address</span>
-
-                        <h3>
-                            <?php echo htmlspecialchars($_SESSION["email"]); ?>
-                        </h3>
+                        <h3><?php echo htmlspecialchars($_SESSION["email"]); ?></h3>
                     </div>
                 </div>
 
@@ -166,6 +184,7 @@ mysqli_stmt_close($notesQuery);
 
                 <?php if (empty($userNotes)): ?>
 
+                    <!-- No notes -->
                     <div class="no-uploaded-notes">
                         <div class="empty-icon">
                             <i class="bi bi-file-earmark-text"></i>
@@ -179,21 +198,27 @@ mysqli_stmt_close($notesQuery);
 
                 <?php else: ?>
 
+                    <!-- Uploaded notes list -->
                     <div class="uploaded-notes-list">
 
                         <?php foreach ($userNotes as $note): ?>
 
                             <?php
+                            // Convert date
                             $noteDate = strtotime($note["date"]);
+
+                            // Create PDF path
                             $filePath = "../" . ltrim($note["image_path"], "/");
                             ?>
 
                             <div class="uploaded-note-card">
 
+                                <!-- PDF icon -->
                                 <div class="uploaded-pdf-icon">
                                     <span>PDF</span>
                                 </div>
 
+                                <!-- Note information -->
                                 <div class="uploaded-note-info">
                                     <h3><?= htmlspecialchars($note["title"]) ?></h3>
 
@@ -208,6 +233,7 @@ mysqli_stmt_close($notesQuery);
                                     <?php endif; ?>
                                 </div>
 
+                                <!-- Note actions -->
                                 <div class="uploaded-note-actions">
 
                                     <!-- Download -->
